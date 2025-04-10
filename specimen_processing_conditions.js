@@ -24,11 +24,44 @@ window.JSONEditor.defaults.callbacks.autocomplete = {
         return result;
     }
 };
-
+Handlebars.registerHelper('getDensityRatio', function (measured, theoretical) {
+    console.log("!!!!!!!!");
+    console.log(measured, theoretical);
+    try {
+        return (measured / theoretical).toFixed(4);
+    } catch (e) {
+        return 0.0;
+    }
+});
+Handlebars.registerHelper('getDensity', function (dryMass, wetMass) {
+    try {
+        return (dryMass / (dryMass - wetMass) * 0.997).toFixed(4);
+    } catch (e) {
+        return 0.0;
+    }
+});
 Handlebars.registerHelper('split', function (string, separator, index) {
     try {
         return string.split(separator)[index].trim();
     } catch (e) {
         return '';
     }
+});
+Handlebars.registerHelper('divide', function (a, b) {
+    if (a === undefined || a === null ) {
+        a = 0;
+    }
+    if (b === undefined || b === null ) {
+        b = 1;
+    }
+    return a / b;
+});
+Handlebars.registerHelper('shrinkage', function (a, b, digits) {
+    if (a === undefined || a === null ) {
+        a = 0;
+    }
+    if (b === undefined || b === null ) {
+        b = 0;
+    }
+    return ((b - a) / a * 100).toFixed(digits);
 });

@@ -143,14 +143,25 @@
             "density": {
               "type": "number",
               "title": "Density (g/cm^3)",
+              "watch": {
+                "wetMass": "root.sintering.afterSintering.wetMass",
+                "dryMass": "root.sintering.afterSintering.dryMass"
+              },
+              "template": "{{getDensity dryMass wetMass}}",
               "options": {
                 "grid_columns": 4
               },
+              "readOnly": true,
               "propertyOrder": 6
             },
             "densityRatio": {
               "type": "number",
               "title": "Measured vs theoretical density ratio",
+              "template": "{{getDensityRatio density (entryField (split powder ';' 0) 'densityCeramics')}}",
+              "watch": {
+                "density": "root.sintering.afterSintering.density",
+                "powder": "root.powder"
+              },
               "options": {
                 "grid_columns": 4
               },
@@ -158,6 +169,69 @@
             }
           },
           "title": "Measurement after sintering"
+        },
+        "shrinkage": {
+          "type": "object",
+          "title": "Shrinkage (%)",
+          "options": {
+            "grid_columns": 3
+          },
+          "format": "grid-strict",
+          "properties": {
+            "width": {
+              "type": "number",
+              "title": "Horizon (x, mm)",
+              "watch": {
+                "beforeSintering": "root.sintering.beforeSintering.width",
+                "afterSintering": "root.sintering.afterSintering.width"
+              },
+              "template": "{{shrinkage beforeSintering afterSintering 3}}",
+              "options": {
+                "grid_columns": 3
+              },
+              "propertyOrder": 1
+            },
+            "height": {
+              "type": "number",
+              "title": "Vertical (y, mm)",
+              "watch": {
+                "beforeSintering": "root.sintering.beforeSintering.height",
+                "afterSintering": "root.sintering.afterSintering.height"
+              },
+              "template": "{{shrinkage beforeSintering afterSintering 3}}",
+              "options": {
+                "grid_columns": 3
+              },
+              "propertyOrder": 2
+            },
+            "thickness": {
+              "type": "number",
+              "title": "Thickness (z, mm)",
+              "watch": {
+                "beforeSintering": "root.sintering.beforeSintering.thickness",
+                "afterSintering": "root.sintering.afterSintering.thickness"
+              },
+              "template": "{{shrinkage beforeSintering afterSintering 3}}",
+              "options": {
+                "grid_columns": 3
+              },
+              "propertyOrder": 3
+            },
+            "dryMass": {
+              "type": "number",
+              "title": "Dry mass (g)",
+              "watch": {
+                "beforeSintering": "root.sintering.beforeSintering.dryMass",
+                "afterSintering": "root.sintering.afterSintering.dryMass"
+              },
+              "template": "{{shrinkage beforeSintering afterSintering 3}}",
+              "options": {
+                "grid_columns": 3
+              },
+              "propertyOrder": 4
+            }
+          },
+          "propertyOrder": 8
         }
       },
       "propertyOrder": 5
@@ -242,5 +316,6 @@
     }
   },
   "title": "HTMAX Printing and Sintering Conditions",
-  "type": "object"
+  "type": "object",
+  "preload": "girder.formId:PLACEHOLDER:densityCeramics"
 }
