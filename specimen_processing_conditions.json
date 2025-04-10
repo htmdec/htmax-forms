@@ -1,0 +1,246 @@
+{
+  "description": "Specimen Processing Conditions (HTMAX)",
+  "definitions": {
+    "measurement": {
+      "type": "object",
+      "title": "Basic characteristics",
+      "format": "grid",
+      "properties": {
+        "width": {
+          "type": "number",
+          "title": "Horizon (x, mm)",
+          "options": {
+            "grid_columns": 3
+          },
+          "propertyOrder": 1
+        },
+        "height": {
+          "type": "number",
+          "title": "Vertical (y, mm)",
+          "options": {
+            "grid_columns": 3
+          },
+          "propertyOrder": 2
+        },
+        "thickness": {
+          "type": "number",
+          "title": "Thickness (z, mm)",
+          "options": {
+            "grid_columns": 3
+          },
+          "propertyOrder": 3
+        },
+        "dryMass": {
+          "type": "number",
+          "title": "Dry mass (g)",
+          "options": {
+            "grid_columns": 3
+          },
+          "propertyOrder": 4
+        }
+      }
+    },
+    "fileUpload": {
+      "title": "G-code file or CAD file",
+      "type": "object",
+      "format": "grid",
+      "properties": {
+        "file": {
+          "type": "string",
+          "title": "Upload File",
+          "propertyOrder": 1
+        },
+        "button": {
+          "title": "Browse",
+          "format": "button",
+          "options": {
+            "button": {
+              "action": "button1CB",
+              "uploadFor": "file"
+            }
+          },
+          "type": "string",
+          "propertyOrder": 2
+        }
+      }
+    }
+  },
+  "properties": {
+    "sintering": {
+      "type": "object",
+      "format": "grid",
+      "title": "Sintering Conditions",
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date",
+          "title": "Sintering Date",
+          "options": {
+            "grid_columns": 3
+          },
+          "propertyOrder": 1
+        },
+        "atmosphere": {
+          "type": "string",
+          "enum": [
+            "Argon",
+            "Vacuum",
+            "Vacuum and Argon"
+          ],
+          "title": "Atmosphere",
+          "options": {
+            "grid_columns": 3
+          },
+          "propertyOrder": 2
+        },
+        "maxTemp": {
+          "type": "number",
+          "title": "Sintering max temperature (°C)",
+          "options": {
+            "grid_columns": 3
+          },
+          "propertyOrder": 3
+        },
+        "time": {
+          "type": "number",
+          "title": "Time @ max temperature (h)",
+          "options": {
+            "grid_columns": 3
+          },
+          "propertyOrder": 4
+        },
+        "beforeSintering": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/measurement"
+            }
+          ],
+          "title": "Measurement before sintering",
+          "options": {
+            "grid_columns": 12
+          },
+          "propertyOrder": 5
+        },
+        "afterSintering": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/measurement"
+            }
+          ],
+          "propertyOrder": 6,
+          "options": {
+            "grid_columns": 12
+          },
+          "properties": {
+            "wetMass": {
+              "type": "number",
+              "title": "Wet mass (g)",
+              "options": {
+                "grid_columns": 4
+              },
+              "propertyOrder": 5
+            },
+            "density": {
+              "type": "number",
+              "title": "Density (g/cm^3)",
+              "options": {
+                "grid_columns": 4
+              },
+              "propertyOrder": 6
+            },
+            "densityRatio": {
+              "type": "number",
+              "title": "Measured vs theoretical density ratio",
+              "options": {
+                "grid_columns": 4
+              },
+              "propertyOrder": 7
+            }
+          },
+          "title": "Measurement after sintering"
+        }
+      },
+      "propertyOrder": 5
+    },
+    "printing": {
+      "type": "object",
+      "format": "grid-strict",
+      "title": "Printing Conditions",
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date",
+          "options": {
+            "grid_columns": 4
+          },
+          "propertyOrder": 1,
+          "title": "Printing Date"
+        },
+        "speed": {
+          "type": "number",
+          "options": {
+            "grid_columns": 4
+          },
+          "propertyOrder": 2,
+          "title": "Printing Speed (unit goes here!)"
+        },
+        "nozzleDiameter": {
+          "type": "number",
+          "options": {
+            "grid_columns": 4,
+            "grid_break": true
+          },
+          "propertyOrder": 3,
+          "title": "Nozzle diameter (unit goes here!)"
+        },
+        "file": {
+          "$ref": "#/definitions/fileUpload",
+          "propertyOrder": 4,
+          "options": {
+            "grid_columns": 12
+          }
+        }
+      },
+      "options": {
+        "grid_columns": 12
+      },
+      "propertyOrder": 4
+    },
+    "powder": {
+      "type": "string",
+      "description": "Select a powder from the database",
+      "title": "Powder Identifier",
+      "format": "autocomplete",
+      "options": {
+        "autocomplete": {
+          "search": "search_powder",
+          "renderResult": "render_powder",
+          "getResultValue": "get_powder_value",
+          "autoSelect": true,
+          "debounceTime": 500
+        }
+      },
+      "propertyOrder": 0
+    },
+    "specimenNumber": {
+      "type": "number",
+      "title": "Specimen Number",
+      "description": "This should be a consecutive number for specimen created out of the same powder",
+      "propertyOrder": 1
+    },
+    "sampleId": {
+      "type": "string",
+      "title": "Specimen ID",
+      "propertyOrder": 2,
+      "readOnly": true,
+      "description": "This is a unique identifier for the specimen",
+      "watch": {
+        "specimen": "specimenNumber",
+        "powder": "powder"
+      },
+      "template": "{{split powder ';' 1}}{{specimen}}"
+    }
+  },
+  "title": "HTMAX Printing and Sintering Conditions",
+  "type": "object"
+}

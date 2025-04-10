@@ -1,0 +1,178 @@
+{
+  "description": "Formulations for Printing (HTMAX)",
+  "definitions": {
+    "ceramicParticleType": {
+      "type": "object",
+      "title": "Ceramic particle",
+      "description": "Order of the ceramic particles here MUST correspond to 'Mass ratio of ceramics' field",
+      "properties": {
+        "compound": {
+          "type": "string",
+          "enum": [
+            "SiC",
+            "B4C",
+            "TaC"
+          ],
+          "options": {
+            "enum_titles": [
+              "Silicon Carbide",
+              "Boron Carbide",
+              "Tantalum Carbide"
+            ]
+          }
+        },
+        "vol": {
+          "type": "number"
+        }
+      }
+    },
+    "binderType": {
+      "type": "object",
+      "title": "Binder",
+      "properties": {
+        "compound": {
+          "type": "string",
+          "enum": [
+            "PDADMAC",
+            "PEG",
+            "PAA",
+            "PVA"
+          ],
+          "title": "Compound"
+        },
+        "vol": {
+          "type": "number",
+          "title": "Vol (%)"
+        }
+      }
+    },
+    "thickenerType": {
+      "type": "object",
+      "title": "Thickener",
+      "properties": {
+        "compound": {
+          "type": "string",
+          "enum": [
+            "MC"
+          ],
+          "default": "MC"
+        },
+        "vol": {
+          "type": "number"
+        }
+      }
+    },
+    "solventType": {
+      "type": "object",
+      "title": "Solvent",
+      "properties": {
+        "compound": {
+          "type": "string",
+          "enum": [
+            "DI-W"
+          ],
+          "default": "DI-W"
+        },
+        "vol": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  "properties": {
+    "composition": {
+      "title": "Material composition (vol%)",
+      "type": "object",
+      "propertyOrder": 7,
+      "properties": {
+        "ceramic": {
+          "type": "array",
+          "title": "Ceramic particle",
+          "items": {
+            "$ref": "#/definitions/ceramicParticleType"
+          },
+          "minItems": 1,
+          "propertyOrder": 1
+        },
+        "binder": {
+          "type": "array",
+          "title": "Binder",
+          "items": {
+            "$ref": "#/definitions/binderType"
+          },
+          "minItems": 1,
+          "propertyOrder": 2
+        },
+        "solvent": {
+          "type": "array",
+          "title": "Solvent",
+          "items": {
+            "$ref": "#/definitions/solventType"
+          },
+          "propertyOrder": 3
+        },
+        "thickener": {
+          "type": "array",
+          "title": "Thickener",
+          "items": {
+            "$ref": "#/definitions/thickenerType"
+          },
+          "propertyOrder": 4
+        }
+      }
+    },
+    "densityCeramics": {
+      "type": "number",
+      "title": "Density of ceramics (g/cm3)",
+      "propertyOrder": 6
+    },
+    "massRatioCeramics": {
+      "type": "string",
+      "description": "Order corresponds to the order of the ceramic particles in the composition",
+      "title": "Mass ratio of ceramics",
+      "default": "100",
+      "propertyOrder": 5
+    },
+    "volumeCeramics": {
+      "type": "number",
+      "title": "Ceramic particle vol%",
+      "propertyOrder": 4
+    },
+    "stock": {
+      "type": "number",
+      "title": "Stock",
+      "propertyOrder": 3
+    },
+    "printingDate": {
+      "type": "string",
+      "format": "date",
+      "title": "Printing date",
+      "propertyOrder": 2
+    },
+    "subSampleId": {
+      "type": "string",
+      "format": "string",
+      "pattern": "^[A-Z]$",
+      "title": "Sub-sample ID",
+      "default": "A",
+      "description": "Used to denote different formulation for the same composition",
+      "propertyOrder": 1
+    },
+    "formulationId": {
+      "type": "string",
+      "title": "Sample ID",
+      "template": "{{sampleRoot ceramics ratio}}_{{vol}}_{{binderRoot binder}}_{{subSampleId}}",
+      "pattern": "^(?!Mismatch).*$",
+      "watch": {
+        "ceramics": "composition.ceramic",
+        "ratio": "massRatioCeramics",
+        "vol": "volumeCeramics",
+        "binder": "composition.binder",
+        "subSampleId": "subSampleId"
+      },
+      "propertyOrder": 0
+    }
+  },
+  "title": "HTMAX Formulations for Printing",
+  "type": "object"
+}
