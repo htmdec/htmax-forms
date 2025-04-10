@@ -33,13 +33,15 @@
       "enum": [
         "HEBM",
         "UA",
-        "GA"
+        "GA",
+        "GC"
       ],
       "options": {
         "enum_titles": [
-          "High Electron Beam Microscopy",
-          "Ultrasonication?",
-          "Gas Atomization?"
+          "High Energy Ball Milling",
+          "Ultrasonic Atomization",
+          "Gas Atomization",
+          "Gas Carburization in 10% CH4/Bal Ar"
         ]
       }
     },
@@ -80,15 +82,10 @@
       "propertyOrder": 7,
       "maxLength": 5
     },
-    "splitValue": {
-      "title": "Split Number",
+    "grainSize": {
+      "title": "Particle size less than (µm)",
       "type": "number",
       "propertyOrder": 8
-    },
-    "grainSize": {
-      "title": "Grain size in µm",
-      "type": "number",
-      "propertyOrder": 9
     }
   },
   "title": "Powder Synthesis",
