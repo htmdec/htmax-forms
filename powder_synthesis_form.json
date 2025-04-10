@@ -20,7 +20,7 @@
         "suffix": "anId",
         "splitValue": "splitValue",
         "userInitials": "userInitials",
-	"grainSize": "grainSize"
+        "grainSize": "grainSize"
       },
       "options": {
         "hidden": true
@@ -34,7 +34,14 @@
         "HEBM",
         "UA",
         "GA"
-      ]
+      ],
+      "options": {
+        "enum_titles": [
+          "High Electron Beam Microscopy",
+          "Ultrasonication?",
+          "Gas Atomization?"
+        ]
+      }
     },
     "composition": {
       "title": "Alloy Composition",
