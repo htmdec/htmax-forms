@@ -151,7 +151,7 @@
               "options": {
                 "grid_columns": 4
               },
-              "readOnly": true,
+              "readonly": true,
               "propertyOrder": 6
             },
             "densityRatio": {
@@ -306,13 +306,177 @@
       "type": "string",
       "title": "Specimen ID",
       "propertyOrder": 2,
-      "readOnly": true,
+      "readonly": true,
       "description": "This is a unique identifier for the specimen",
       "watch": {
         "specimen": "specimenNumber",
         "powder": "powder"
       },
       "template": "{{split powder ';' 1}}{{specimen}}"
+    },
+    "igsn_prefix": {
+      "type": "string",
+      "title": "IGSN Prefix",
+      "propertyOrder": 101,
+      "description": "This is a unique identifier for the specimen",
+      "readonly": true,
+      "default": "JHACRA",
+      "options": {
+        "hidden": true
+      }
+    },
+    "igsn_suffix": {
+      "type": "string",
+      "title": "IGSN Suffix",
+      "propertyOrder": 102,
+      "description": "This is a unique identifier for the specimen",
+      "readonly": true,
+      "default": "",
+      "options": {
+        "hidden": true
+      }
+    },
+    "igsn_request": {
+      "type": "boolean",
+      "title": "Request IGSN",
+      "propertyOrder": 103,
+      "default": true,
+      "readonly": true,
+      "options": {
+        "hidden": true
+      }
+    },
+    "igsn_track": {
+      "type": "boolean",
+      "title": "Track IGSN",
+      "propertyOrder": 104,
+      "default": true,
+      "readonly": true,
+      "options": {
+        "hidden": true
+      }
+    },
+    "igsn_field": {
+      "type": "string",
+      "propertyOrder": 105,
+      "title": "Field with IGSN prefix",
+      "const": "assigned_igsn",
+      "default": "assigned_igsn",
+      "options": {
+        "hidden": true,
+        "grid_columns": 12
+      }
+    },
+    "assigned_igsn": {
+      "type": "string",
+      "title": "Assigned IGSN",
+      "propertyOrder": 106,
+      "default": "TBA",
+      "readonly": true,
+      "options": {
+        "hidden": true
+      }
+    },
+    "igsn": {
+      "type": "object",
+      "title": "IGSN Metadata",
+      "propertyOrder": 104,
+      "options": {
+        "hidden": true
+      },
+      "properties": {
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "alternateIdentifiers": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "alternateIdentifier": {
+                    "type": "string",
+                    "propertyOrder": 1,
+                    "watch": {
+                      "sampleId": "root.sampleId"
+                    },
+                    "template": "{{sampleId}}"
+                  },
+                  "alternateIdentifierType": {
+                    "type": "string",
+                    "propertyOrder": 2,
+                    "default": "local"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "titles": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "propertyOrder": 1,
+                "watch": {
+                  "powder": "root.powder"
+                },
+                "template": "{{igsnTitle (split powder ';' 1)}}"
+              }
+            }
+          }
+        },
+        "relatedIdentifiers": {
+          "type": "array",
+          "title": "Related Identifiers",
+          "propertyOrder": 2,
+          "readonly": true,
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "relatedIdentifier": {
+                "type": "string",
+                "title": "Related Identifier",
+                "propertyOrder": 1,
+                "readonly": true,
+                "watch": {
+                  "powder": "root.powder"
+                },
+                "template": "/api/v1/entry/{{split powder ';' 0}}"
+              },
+              "relatedIdentifierType": {
+                "type": "string",
+                "propertyOrder": 2,
+                "readonly": true,
+                "enum": [
+                  "URL",
+                  "IGSN",
+                  "DOI",
+                  "Other"
+                ],
+                "default": "URL"
+              },
+              "relationType": {
+                "type": "string",
+                "propertyOrder": 3,
+                "readonly": true,
+                "default": "HasMetadata"
+              },
+              "relatedMetadataScheme": {
+                "type": "string",
+                "propertyOrder": 4,
+                "readonly": true,
+                "default": "/api/v1/form/PLACEHOLDER/schema"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "title": "HTMAX Printing and Sintering Conditions",

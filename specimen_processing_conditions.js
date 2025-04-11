@@ -25,8 +25,6 @@ window.JSONEditor.defaults.callbacks.autocomplete = {
     }
 };
 Handlebars.registerHelper('getDensityRatio', function (measured, theoretical) {
-    console.log("!!!!!!!!");
-    console.log(measured, theoretical);
     try {
         return (measured / theoretical).toFixed(4);
     } catch (e) {
@@ -64,4 +62,40 @@ Handlebars.registerHelper('shrinkage', function (a, b, digits) {
         b = 0;
     }
     return ((b - a) / a * 100).toFixed(digits);
+});
+Handlebars.registerHelper('igsnTitle', function (sampleId) {
+    if (sampleId === undefined || sampleId === null ) {
+        return '';
+    }
+    const input = sampleId.split('_')[0];
+     // Define map from element symbols to their compound forms
+    const compoundMap = {
+        Si: 'SiC',
+        B: 'B4C',
+        Al: 'Al2O3',
+        Ti: 'TiC',
+        Zr: 'ZrO2',
+        // Add more as needed
+    };
+
+    // Parse the input into pairs of elements and percentages
+    const parts = [];
+    const regex = /([A-Z][a-z]*)(\d+)/g;
+    let match;
+
+    while ((match = regex.exec(input)) !== null) {
+        const element = match[1];
+        const percentage = parseInt(match[2], 10);
+        parts.push({ element, percentage });
+    }
+
+    if (parts.length === 0) {
+        return "Invalid composition format";
+    }
+
+    // Build the compound names and ratio string
+    const compoundNames = parts.map(p => compoundMap[p.element] || p.element);
+    const ratios = parts.map(p => p.percentage).join(':');
+
+    return `Ceramic composite ${compoundNames.join('+')} (${ratios})`;
 });

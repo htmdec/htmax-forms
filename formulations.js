@@ -7,10 +7,6 @@ Handlebars.registerHelper('sampleRoot', function(compounds, mass) {
     Silicon: "Si",
     Boron: "B",
     Tantalum: "Ta",
-    Carbon: "C",
-    Oxygen: "O",
-    Nitrogen: "N",
-    Hydrogen: "H",
     // Add more as needed
   };
   
