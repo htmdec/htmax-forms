@@ -7,6 +7,37 @@
       "options": {
         "flatpickr": {}
       }
+    },
+    "files": {
+      "$id": "files",
+      "type": "object",
+      "format": "grid",
+      "properties": {
+        "targetPath": {
+          "type": "string",
+          "title": "Target Path",
+          "watch": {
+            "sampleId": "root.sampleId"
+          },
+          "template": "{{sampleId}}"
+        },
+        "file": {
+          "type": "string",
+          "propertyOrder": 1,
+          "title": "Upload files"
+        },
+        "button": {
+          "title": "Browse",
+          "format": "button",
+          "propertyOrder": 2,
+          "options": {
+            "button": {
+              "action": "button1CB",
+              "uploadFor": "file"
+            }
+          }
+        }
+      }
     }
   },
   "properties": {
@@ -31,22 +62,18 @@
       "title": "Synthesis Tool Identifier",
       "type": "string",
       "enum": [
-        "HEBM",
-        "UA",
-        "GA"
+        "GC"
       ],
       "options": {
         "enum_titles": [
-          "High Energy Ball Milling",
-          "Ultrasonic Atomization",
-          "Gas Atomization"
+          "Gas carburization in 10% CH4/Bal Ar"
         ]
       }
     },
-    "composition": {
-      "title": "Alloy Composition (at wt%)",
+    "initialComposition": {
+      "title": "Initial Composition",
       "type": "string",
-      "description": "e.g. Nb50:Ti50",
+      "enumSource": "girder.formId:PLACEHOLDER",
       "propertyOrder": 2
     },
     "fabricationDate": {
@@ -55,8 +82,11 @@
       "propertyOrder": 3
     },
     "quantity": {
-      "title": "Total Material Quantity (g)",
-      "type": "number",
+      "title": "Material Quantity (g)",
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
       "propertyOrder": 4
     },
     "conditions": {
@@ -70,15 +100,14 @@
           "description": "1-2 sentences description",
           "propertyOrder": 1
         },
-        "agent": {
-          "type": "string",
-          "title": "Process control agent",
-          "description": "e.g. 2 wt% stearic acid",
+        "temperature": {
+          "type": "number",
+          "title": "Reaction Temperature (degC)",
           "propertyOrder": 2
         },
         "time": {
           "type": "number",
-          "title": "HEBM Time (h)",
+          "title": "Reaction Time (min)",
           "propertyOrder": 3
         }
       },
@@ -123,9 +152,15 @@
         }
       },
       "propertyOrder": 8
+    },
+    "files": {
+      "title": "Diffraction Data",
+      "description": "Upload any relevant files. Make sure they have unique names.",
+      "$ref": "#/definitions/files",
+      "propertyOrder": 9
     }
   },
-  "title": "Metal Powder Synthesis (HT-MAX)",
-  "description": "Form to track metal powder samples for HT-MAX using defined naming conventions and metadata protocols",
+  "title": "Ceramic Powder Synthesis (HT-MAX)",
+  "description": "Form to track ceramic powder samples for HT-MAX using defined naming conventions and metadata protocols",
   "type": "object"
 }
