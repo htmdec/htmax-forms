@@ -282,8 +282,8 @@
     },
     "powder": {
       "type": "string",
-      "description": "Select a powder from the database",
-      "title": "Powder Identifier",
+      "description": "Select a formulation from the database",
+      "title": "Formulation Identifier",
       "format": "autocomplete",
       "options": {
         "autocomplete": {
