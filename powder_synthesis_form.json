@@ -7,20 +7,247 @@
       "options": {
         "flatpickr": {}
       }
+    },
+    "igsnMetadata": {
+      "id": "igsnMetadata",
+      "type": "object",
+      "format": "grid-strict",
+      "title": "IGSN Creation",
+      "options": {
+        "grid_columns": 12,
+        "titleHidden": true
+      },
+      "properties": {
+        "_text1": {
+          "type": "string",
+          "title": "IGSN metadata",
+          "format": "hidden",
+          "description": "<p>This section gathers necessary information to create an IGSNs for each powder</p>",
+          "propertyOrder": 0,
+          "options": {
+            "grid_columns": 12,
+            "grid_break": true
+          }
+        },
+        "institution": {
+          "type": "string",
+          "description": "Originating Institution",
+          "enum": [
+            "NW"
+          ],
+          "default": "NW",
+          "propertyOrder": 1,
+          "options": {
+            "titleHidden": true,
+            "grid_columns": 3,
+            "enum_titles": [
+              "Northwestern University"
+            ]
+          }
+        },
+        "groupNW": {
+          "type": "string",
+          "description": "Group within the institution",
+          "enum": [
+            "X"
+          ],
+          "default": "X",
+          "propertyOrder": 2,
+          "options": {
+            "titleHidden": true,
+            "grid_columns": 3,
+            "enum_titles": [
+              "Unknown"
+            ]
+          }
+        },
+        "material": {
+          "type": "string",
+          "description": "Material Type",
+          "enum": [
+            "MA"
+          ],
+          "default": "MA",
+          "propertyOrder": 3,
+          "options": {
+            "titleHidden": true,
+            "grid_columns": 3,
+            "enum_titles": [
+              "metals and alloys"
+            ]
+          }
+        },
+        "submaterialMA": {
+          "type": "string",
+          "description": "Material Subtype",
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L"
+          ],
+          "propertyOrder": 4,
+          "default": "L",
+          "options": {
+            "titleHidden": true,
+            "dependencies": {
+              "material": "MA"
+            },
+            "enum_titles": [
+              "Al-containing",
+              "commercially puremetals",
+              "Cu-containing",
+              "Fe-containing",
+              "intermetallics",
+              "Mg-containing",
+              "Ni-containing",
+              "rare earth",
+              "refactories",
+              "steels",
+              "superalloys",
+              "Ti-containing"
+            ],
+            "grid_columns": 3
+          }
+        },
+        "title": {
+          "type": "string",
+          "watch": {
+            "title": "root.conditions.title"
+          },
+          "template": "{{title}}",
+          "options": {
+            "hidden": true,
+            "grid_columns": 12
+          }
+        },
+        "descriptionMethods": {
+          "type": "string",
+          "watch": {
+            "description": "root.conditions.description"
+          },
+          "template": "{{description}}",
+          "options": {
+            "hidden": true,
+            "grid_columns": 12
+          }
+        }
+      }
+    },
+    "igsn": {
+      "id": "igsn",
+      "type": "object",
+      "title": "IGSN",
+      "description": "IGSN",
+      "options": {
+        "hidden": true
+      },
+      "properties": {
+        "suffix": {
+          "type": "string",
+          "propertyOrder": 1,
+          "options": {
+            "hidden": true,
+            "grid_columns": 12
+          },
+          "default": ""
+        },
+        "prefix": {
+          "type": "string",
+          "propertyOrder": 2,
+          "description": "The unique identifier for the build.",
+          "hidden": true,
+          "template": "{{org}}{{gCM}}{{material}}{{sMA}}",
+          "watch": {
+            "org": "root.igsnMeta.institution",
+            "gCM": "root.igsnMeta.groupNW",
+            "material": "root.igsnMeta.material",
+            "sMA": "root.igsnMeta.submaterialMA",
+            "suffix": "igsn.suffix"
+          },
+          "options": {
+            "grid_columns": 12,
+            "hidden": true
+          }
+        },
+        "request": {
+          "type": "boolean",
+          "propertyOrder": 3,
+          "title": "Request IGSN",
+          "description": "Whether to request an IGSN.",
+          "default": true,
+          "options": {
+            "hidden": true,
+            "grid_columns": 12
+          }
+        },
+        "track": {
+          "type": "boolean",
+          "propertyOrder": 4,
+          "title": "Track IGSN",
+          "description": "Whether to track the IGSN.",
+          "default": true,
+          "options": {
+            "hidden": true,
+            "grid_columns": 12
+          }
+        },
+        "field": {
+          "type": "string",
+          "propertyOrder": 5,
+          "title": "Field",
+          "description": "The field of the IGSN.",
+          "default": "assignedIGSN",
+          "const": "assignedIGSN",
+          "options": {
+            "hidden": true,
+            "grid_columns": 12
+          }
+        }
+      }
     }
   },
   "properties": {
+    "igsnMeta": {
+      "$ref": "#/definitions/igsnMetadata",
+      "propertyOrder": 0
+    },
+    "igsn": {
+      "$ref": "#/definitions/igsn",
+      "propertyOrder": 0,
+      "options": {
+        "hidden": true
+      }
+    },
+    "assignedIGSN": {
+      "type": "string",
+      "propertyOrder": 0,
+      "template": "{{prefix}}{{suffix}}",
+      "watch": {
+        "prefix": "igsn.prefix",
+        "suffix": "igsn.suffix"
+      },
+      "options": {
+        "hidden": true,
+        "grid_columns": 12
+      }
+    },
     "sampleId": {
       "type": "string",
       "propertyOrder": 3,
-      "template": "{{toolId}}_{{date}}_{{suffix}}_{{userInitials}}_{{grainSize}}",
+      "template": "{{composition}}_{{date}}_{{grainSize}}",
       "watch": {
-        "toolId": "toolId",
         "date": "fabricationDate",
-        "suffix": "anId",
-        "splitValue": "splitValue",
-        "userInitials": "userInitials",
-        "grainSize": "grainSize.max"
+        "composition": "composition",
+        "grainSize": "grainSize"
       },
       "options": {
         "hidden": true
@@ -44,9 +271,10 @@
       }
     },
     "composition": {
-      "title": "Alloy Composition (at wt%)",
+      "title": "Alloy Composition (at.%)",
       "type": "string",
       "description": "e.g. Nb50:Ti50",
+      "pattern": "^([A-Z][a-z]?\\d+(\\.\\d+)?)(:[A-Z][a-z]?\\d+(\\.\\d+)?)*$",
       "propertyOrder": 2
     },
     "fabricationDate": {
@@ -57,75 +285,126 @@
     "quantity": {
       "title": "Total Material Quantity (g)",
       "type": "number",
+      "exclusiveMinimum": 0,
       "propertyOrder": 4
     },
     "conditions": {
       "type": "object",
       "title": "Processing Conditions",
       "properties": {
-        "description": {
+        "title": {
           "type": "string",
           "title": "Description",
-          "format": "textarea",
-          "description": "1-2 sentences description",
+          "template": "{{composition}} powder made via {{toolId}} for {{time}} h.",
+          "watch": {
+            "composition": "root.composition",
+            "toolId": "root.toolId",
+            "time": "root.conditions.time"
+          },
           "propertyOrder": 1
+        },
+        "description": {
+          "type": "string",
+          "title": "Additional Information",
+          "format": "textarea",
+          "propertyOrder": 2,
+          "template": "{{time}}h {{toolId}} with {{grinding}} mm WC balls and {{agent}}, {{runTime}} min run time - {{coolDownTime}} min cool down time. {{ballToPowderRatio}}:1 ball to powder mass ratio.",
+          "watch": {
+            "toolId": "root.toolId",
+            "time": "root.conditions.time",
+            "grinding": "root.conditions.grinding",
+            "agent": "root.conditions.agent",
+            "runTime": "root.conditions.runTime",
+            "coolDownTime": "root.conditions.coolDownTime",
+            "ballToPowderRatio": "root.conditions.ballToPowderRatio"
+          }
         },
         "agent": {
           "type": "string",
           "title": "Process control agent",
+          "default": "unknown process control agent",
           "description": "e.g. 2 wt% stearic acid",
-          "propertyOrder": 2
+          "propertyOrder": 3
         },
         "time": {
           "type": "number",
           "title": "HEBM Time (h)",
-          "propertyOrder": 3
+          "exclusiveMinimum": 0,
+          "propertyOrder": 4
+        },
+        "grinding": {
+          "type": "number",
+          "title": "WC grinding media (mm)",
+          "exclusiveMinimum": 0,
+          "default": 4,
+          "propertyOrder": 5
+        },
+        "runTime": {
+          "type": "number",
+          "title": "Run time (min)",
+          "exclusiveMinimum": 0,
+          "default": 30,
+          "propertyOrder": 6
+        },
+        "coolDownTime": {
+          "type": "number",
+          "title": "Cool down time (min)",
+          "exclusiveMinimum": 0,
+          "default": 10,
+          "propertyOrder": 7
+        },
+        "ballToPowderRatio": {
+          "type": "number",
+          "title": "Ball to powder mass ratio",
+          "exclusiveMinimum": 0,
+          "default": 10,
+          "propertyOrder": 8
         }
       },
       "propertyOrder": 5
     },
-    "anId": {
-      "type": "string",
-      "title": "Alphanumeric Identifier",
-      "propertyOrder": 6,
-      "format": "custom",
-      "pattern": "[0-9,A-Z]",
-      "maxLength": 1
-    },
-    "userInitials": {
-      "type": "string",
-      "title": "User Initials",
-      "propertyOrder": 7,
-      "maxLength": 5
-    },
     "grainSize": {
-      "title": "Particle size range (µm)",
-      "type": "object",
-      "format": "grid",
-      "properties": {
-        "min": {
-          "type": "number",
-          "title": "Minimum",
-          "default": 0.1,
-          "propertyOrder": 1,
-          "options": {
-            "grid_columns": 6
-          }
-        },
-        "max": {
-          "type": "number",
-          "title": "Maximum",
-          "default": 10,
-          "propertyOrder": 2,
-          "options": {
-            "grid_columns": 6
-          }
-        }
-      },
+      "title": "Particle size, less than (µm)",
+      "type": "number",
+      "default": 10,
       "propertyOrder": 8
     }
   },
   "title": "Metal Powder Synthesis (HT-MAX)",
   "description": "Form to track metal powder samples for HT-MAX using defined naming conventions and metadata protocols",
-  "type": "object"
+  "type": "object",
+  "required": [
+    "toolId",
+    "composition",
+    "fabricationDate",
+    "quantity",
+    "conditions"
+  ],
+  "if": {
+    "properties": {
+      "igsn": {
+        "properties": {
+          "request": {
+            "const": false
+          }
+        }
+      }
+    }
+  },
+  "then": {
+    "properties": {
+      "igsnMeta": {
+        "options": {
+          "hidden": true
+        },
+        "readonly": true
+      },
+      "assignedIGSN": {
+        "options": {
+          "hidden": false
+        },
+        "readonly": true
+      }
+    }
+  }
 }
