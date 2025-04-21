@@ -8,6 +8,227 @@
         "flatpickr": {}
       }
     },
+    "igsnMetadata": {
+      "id": "igsnMetadata",
+      "type": "object",
+      "format": "grid-strict",
+      "title": "IGSN Creation",
+      "options": {
+        "grid_columns": 12,
+        "titleHidden": true
+      },
+      "properties": {
+        "_text1": {
+          "type": "string",
+          "title": "IGSN metadata",
+          "format": "hidden",
+          "description": "<p>This section gathers necessary information to create an IGSNs for each powder</p>",
+          "propertyOrder": 0,
+          "options": {
+            "grid_columns": 12,
+            "grid_break": true
+          }
+        },
+        "institution": {
+          "type": "string",
+          "description": "Originating Institution",
+          "enum": [
+            "NW"
+          ],
+          "default": "NW",
+          "propertyOrder": 1,
+          "options": {
+            "titleHidden": true,
+            "grid_columns": 3,
+            "enum_titles": [
+              "Northwestern University"
+            ]
+          }
+        },
+        "groupNW": {
+          "type": "string",
+          "description": "Group within the institution",
+          "enum": [
+            "X"
+          ],
+          "default": "X",
+          "propertyOrder": 2,
+          "options": {
+            "titleHidden": true,
+            "grid_columns": 3,
+            "enum_titles": [
+              "Unknown"
+            ]
+          }
+        },
+        "material": {
+          "type": "string",
+          "description": "Material Type",
+          "enum": [
+            "CR"
+          ],
+          "default": "CR",
+          "propertyOrder": 3,
+          "options": {
+            "titleHidden": true,
+            "grid_columns": 3,
+            "enum_titles": [
+              "ceramics"
+            ]
+          }
+        },
+        "submaterialCR": {
+          "type": "string",
+          "description": "Material Subtype",
+          "enum": [
+            "A",
+            "C"
+          ],
+          "propertyOrder": 4,
+          "default": "A",
+          "options": {
+            "titleHidden": true,
+            "dependencies": {
+              "material": "CR"
+            },
+            "enum_titles": [
+              "carbides",
+              "nitrides"
+            ],
+            "grid_columns": 3
+          }
+        },
+        "title": {
+          "type": "string",
+          "watch": {
+            "title": "root.conditions.title"
+          },
+          "template": "{{title}}",
+          "options": {
+            "hidden": true,
+            "grid_columns": 12
+          }
+        },
+        "descriptionMethods": {
+          "type": "string",
+          "watch": {
+            "description": "root.conditions.description"
+          },
+          "template": "{{description}}",
+          "options": {
+            "hidden": true,
+            "grid_columns": 12
+          }
+        }
+      }
+    },
+    "igsn": {
+      "id": "igsn",
+      "type": "object",
+      "title": "IGSN",
+      "description": "IGSN",
+      "options": {
+        "hidden": true
+      },
+      "properties": {
+        "suffix": {
+          "type": "string",
+          "propertyOrder": 1,
+          "options": {
+            "hidden": true,
+            "grid_columns": 12
+          },
+          "default": ""
+        },
+        "prefix": {
+          "type": "string",
+          "propertyOrder": 2,
+          "description": "The unique identifier for the build.",
+          "hidden": true,
+          "template": "{{org}}{{gCM}}{{material}}{{sCR}}",
+          "watch": {
+            "org": "root.igsnMeta.institution",
+            "gCM": "root.igsnMeta.groupNW",
+            "material": "root.igsnMeta.material",
+            "sCR": "root.igsnMeta.submaterialCR",
+            "suffix": "igsn.suffix"
+          },
+          "options": {
+            "grid_columns": 12,
+            "hidden": true
+          }
+        },
+        "request": {
+          "type": "boolean",
+          "propertyOrder": 3,
+          "title": "Request IGSN",
+          "description": "Whether to request an IGSN.",
+          "default": true,
+          "options": {
+            "hidden": true,
+            "grid_columns": 12
+          }
+        },
+        "track": {
+          "type": "boolean",
+          "propertyOrder": 4,
+          "title": "Track IGSN",
+          "description": "Whether to track the IGSN.",
+          "default": true,
+          "options": {
+            "hidden": true,
+            "grid_columns": 12
+          }
+        },
+        "field": {
+          "type": "string",
+          "propertyOrder": 5,
+          "title": "Field",
+          "description": "The field of the IGSN.",
+          "default": "assignedIGSN",
+          "const": "assignedIGSN",
+          "options": {
+            "hidden": true,
+            "grid_columns": 12
+          }
+        },
+        "batch": {
+          "type": "object",
+          "propertyOrder": 6,
+          "properties": {
+            "method": {
+              "type": "string",
+              "propertyOrder": 1,
+              "title": "Method",
+              "description": "The method to use to generate the batch IGSN.",
+              "enum": [
+                "from_array"
+              ],
+              "default": "from_array",
+              "options": {
+                "hidden": true,
+                "grid_columns": 12
+              }
+            },
+            "field": {
+              "type": "string",
+              "propertyOrder": 2,
+              "default": "materials",
+              "const": "materials",
+              "options": {
+                "hidden": true,
+                "grid_columns": 12
+              }
+            }
+          },
+          "description": "Generate a batch IGSN",
+          "options": {
+            "hidden": true,
+            "grid_columns": 12
+          }
+        }
+      }
+    },
     "files": {
       "$id": "files",
       "type": "object",
@@ -41,28 +262,51 @@
     }
   },
   "properties": {
+    "igsnMeta": {
+      "$ref": "#/definitions/igsnMetadata",
+      "propertyOrder": 0
+    },
+    "igsn": {
+      "$ref": "#/definitions/igsn",
+      "propertyOrder": 0,
+      "options": {
+        "hidden": true
+      }
+    },
+    "assignedIGSN": {
+      "type": "string",
+      "propertyOrder": 0,
+      "template": "{{prefix}}{{suffix}}",
+      "watch": {
+        "prefix": "igsn.prefix",
+        "suffix": "igsn.suffix"
+      },
+      "options": {
+        "hidden": true,
+        "grid_columns": 12
+      }
+    },
     "sampleId": {
       "type": "string",
       "propertyOrder": 3,
-      "template": "{{toolId}}_{{date}}_{{suffix}}_{{userInitials}}_{{grainSize}}",
+      "template": "{{split composition ';' 1}}_{{temperature}}_{{time}}_{{process}}_{{fabricationDate}}",
       "watch": {
-        "toolId": "toolId",
-        "date": "fabricationDate",
-        "suffix": "anId",
-        "splitValue": "splitValue",
-        "userInitials": "userInitials",
-        "grainSize": "grainSize.max"
+        "process": "root.process",
+        "composition": "initialComposition",
+        "temperature": "conditions.temperature",
+        "time": "conditions.time",
+        "fabricationDate": "fabricationDate"
       },
       "options": {
         "hidden": true
       }
     },
-    "toolId": {
+    "process": {
       "propertyOrder": 1,
-      "title": "Synthesis Tool Identifier",
+      "title": "Synthesis Process",
       "type": "string",
       "enum": [
-        "GC"
+        "CH4"
       ],
       "options": {
         "enum_titles": [
@@ -73,7 +317,17 @@
     "initialComposition": {
       "title": "Initial Composition",
       "type": "string",
-      "enumSource": "girder.formId:PLACEHOLDER",
+      "description": "Select a metal powder from the database. (autocompletes after 4 characters)",
+      "format": "autocomplete",
+      "options": {
+        "autocomplete": {
+          "search": "search_powder",
+          "renderResult": "render_powder",
+          "getResultValue": "get_powder_value",
+          "autoSelect": true,
+          "debounceTime": 500
+        }
+      },
       "propertyOrder": 2
     },
     "fabricationDate": {
@@ -81,23 +335,21 @@
       "$ref": "#/definitions/date",
       "propertyOrder": 3
     },
-    "quantity": {
-      "title": "Material Quantity (g)",
-      "type": "array",
-      "items": {
-        "type": "number"
-      },
-      "propertyOrder": 4
-    },
     "conditions": {
       "type": "object",
       "title": "Processing Conditions",
       "properties": {
-        "description": {
+        "title": {
           "type": "string",
           "title": "Description",
+          "template": "{{processName process}} of {{split (split initialComposition '_' 0) ';' 1}} powder at {{temperature}} degC for {{time}} min",
           "format": "textarea",
-          "description": "1-2 sentences description",
+          "watch": {
+            "process": "root.process",
+            "initialComposition": "root.initialComposition",
+            "temperature": "root.conditions.temperature",
+            "time": "root.conditions.time"
+          },
           "propertyOrder": 1
         },
         "temperature": {
@@ -111,56 +363,68 @@
           "propertyOrder": 3
         }
       },
+      "propertyOrder": 4
+    },
+    "totalMass": {
+      "type": "number",
+      "template": "{{sum materials 'quantity'}}",
+      "watch": {
+        "materials": "root.materials"
+      },
+      "title": "Total Mass (g)",
       "propertyOrder": 5
     },
-    "anId": {
-      "type": "string",
-      "title": "Alphanumeric Identifier",
-      "propertyOrder": 6,
-      "format": "custom",
-      "pattern": "[0-9,A-Z]",
-      "maxLength": 1
-    },
-    "userInitials": {
-      "type": "string",
-      "title": "User Initials",
-      "propertyOrder": 7,
-      "maxLength": 5
-    },
-    "grainSize": {
-      "title": "Particle size range (µm)",
-      "type": "object",
-      "format": "grid",
-      "properties": {
-        "min": {
-          "type": "number",
-          "title": "Minimum",
-          "default": 0.1,
-          "propertyOrder": 1,
-          "options": {
-            "grid_columns": 6
-          }
-        },
-        "max": {
-          "type": "number",
-          "title": "Maximum",
-          "default": 10,
-          "propertyOrder": 2,
-          "options": {
-            "grid_columns": 6
+    "materials": {
+      "title": "Materials",
+      "type": "array",
+      "items": {
+        "headerTemplate": "Material {{ i1 }}",
+        "type": "object",
+        "properties": {
+          "quantity": {
+            "type": "number",
+            "title": "Quantity (g)",
+            "propertyOrder": 1
+          },
+          "files": {
+            "title": "Diffraction Data",
+            "description": "Upload any relevant files. Make sure they have unique names.",
+            "$ref": "#/definitions/files",
+            "propertyOrder": 9
           }
         }
       },
-      "propertyOrder": 8
-    },
-    "files": {
-      "title": "Diffraction Data",
-      "description": "Upload any relevant files. Make sure they have unique names.",
-      "$ref": "#/definitions/files",
-      "propertyOrder": 9
+      "propertyOrder": 6
     }
   },
   "title": "Ceramic Powder Synthesis (HT-MAX)",
   "description": "Form to track ceramic powder samples for HT-MAX using defined naming conventions and metadata protocols",
-  "type": "object"
+  "type": "object",
+  "if": {
+    "properties": {
+      "igsn": {
+        "properties": {
+          "request": {
+            "const": false
+          }
+        }
+      }
+    }
+  },
+  "then": {
+    "properties": {
+      "igsnMeta": {
+        "options": {
+          "hidden": true
+        },
+        "readonly": true
+      },
+      "assignedIGSN": {
+        "options": {
+          "hidden": false
+        },
+        "readonly": true
+      }
+    }
+  }
 }
