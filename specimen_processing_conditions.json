@@ -315,7 +315,7 @@
                 "type": "string",
                 "propertyOrder": 4,
                 "readonly": true,
-                "default": "/api/v1/form/PLACEHOLDER/schema"
+                "default": "/api/v1/form/680aaacd152b337e6d25001f/schema"
               }
             }
           }
@@ -602,7 +602,7 @@
   },
   "title": "HTMAX Printing and Sintering Conditions",
   "type": "object",
-  "preload": "girder.formId:PLACEHOLDER:densityCeramics",
+  "preload": "girder.formId:680aaacd152b337e6d25001f:densityCeramics",
   "if": {
     "properties": {
       "igsn": {
