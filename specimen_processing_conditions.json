@@ -45,6 +45,17 @@
       "type": "object",
       "format": "grid",
       "properties": {
+        "targetPath": {
+          "type": "string",
+          "title": "Target Path",
+          "watch": {
+            "sampleId": "root.sampleId"
+          },
+          "options": {
+            "hidden": true
+          },
+          "template": "{{sampleId}}"
+        },
         "file": {
           "type": "string",
           "title": "Upload File",
