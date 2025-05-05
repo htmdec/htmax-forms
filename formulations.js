@@ -4,6 +4,9 @@ Handlebars.registerHelper('sampleRoot', function(compounds, mass) {
   if (!mass) return '';
 
   const elementToSymbol = {
+    SiC: "Si",
+    B4C: "B",
+    TaC: "Ta",
     Silicon: "Si",
     Boron: "B",
     Tantalum: "Ta",
