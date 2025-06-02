@@ -7,9 +7,15 @@ Handlebars.registerHelper('sampleRoot', function(compounds, mass) {
     SiC: "Si",
     B4C: "B",
     TaC: "Ta",
+    NbC: "Nb",
+    HfC: "Hf",
+    TiC: "Ti",
     Silicon: "Si",
     Boron: "B",
     Tantalum: "Ta",
+    Niobium: "Nb",
+    Hafnium: "Hf",
+    Titanium: "Ti",
     // Add more as needed
   };
   

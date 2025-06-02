@@ -11,13 +11,19 @@
           "enum": [
             "SiC",
             "B4C",
-            "TaC"
+            "TaC",
+            "HfC",
+            "TiC",
+            "NbC"
           ],
           "options": {
             "enum_titles": [
               "Silicon Carbide",
               "Boron Carbide",
-              "Tantalum Carbide"
+              "Tantalum Carbide",
+              "Hafnium Carbide",
+              "Titanium Carbide",
+              "Niobium Carbide"
             ]
           }
         },
