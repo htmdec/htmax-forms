@@ -67,7 +67,8 @@ Handlebars.registerHelper('igsnTitle', function (sampleId) {
     if (sampleId === undefined || sampleId === null ) {
         return '';
     }
-    const input = sampleId.split('_')[0];
+    const inputString = sampleId.split('_')[0];
+    console.log(inputString);
      // Define map from element symbols to their compound forms
     const compoundMap = {
         Si: 'SiC',
@@ -80,22 +81,32 @@ Handlebars.registerHelper('igsnTitle', function (sampleId) {
 
     // Parse the input into pairs of elements and percentages
     const parts = [];
-    const regex = /([A-Z][a-z]*)(\d+)/g;
-    let match;
+    const unitRegex = /((?:[A-Za-z]+|\([^)]+\)))(\d+)/g;
 
-    while ((match = regex.exec(input)) !== null) {
-        const element = match[1];
-        const percentage = parseInt(match[2], 10);
-        parts.push({ element, percentage });
+    let materials = [];
+    let percentages = [];
+
+    // Use matchAll to find all non-overlapping matches of the unit pattern in the input string.
+    // This returns an iterator, which we can spread into an array or loop through.
+    const matches = [...inputString.matchAll(unitRegex)];
+
+    // If no matches are found, return the original string as no transformation is possible.
+    if (matches.length === 0) {
+        return inputString;
     }
 
-    if (parts.length === 0) {
-        return "Invalid composition format";
+    // Iterate through each match to extract the material and percentage.
+    for (const match of matches) {
+        materials.push(compoundMap[match[1]] || match[1]);   // Capture Group 1: The material string
+        percentages.push(match[2]); // Capture Group 2: The percentage string
     }
+    console.log(materials, percentages);
 
-    // Build the compound names and ratio string
-    const compoundNames = parts.map(p => compoundMap[p.element] || p.element);
-    const ratios = parts.map(p => p.percentage).join(':');
+    // Join the collected materials with a '+' sign.
+    const materialsPart = materials.join('+');
 
-    return `Ceramic composite ${compoundNames.join('+')} (${ratios})`;
+    // Join the collected percentages with a ':' sign.
+    const percentagesPart = percentages.join(':');
+
+    return `Ceramic composite ${materialsPart} (${percentagesPart})`;
 });

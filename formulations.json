@@ -7,28 +7,53 @@
       "description": "Order of the ceramic particles here MUST correspond to 'Mass ratio of ceramics' field",
       "properties": {
         "compound": {
-          "type": "string",
-          "enum": [
-            "SiC",
-            "B4C",
-            "TaC",
-            "HfC",
-            "TiC",
-            "NbC"
-          ],
-          "options": {
-            "enum_titles": [
-              "Silicon Carbide",
-              "Boron Carbide",
-              "Tantalum Carbide",
-              "Hafnium Carbide",
-              "Titanium Carbide",
-              "Niobium Carbide"
-            ]
-          }
+          "oneOf": [
+            {
+              "title": "HT-MAX Ceramic",
+              "type": "string",
+              "format": "autocomplete",
+              "pattern": "^.*;.*$",
+              "options": {
+                "autocomplete": {
+                  "search": "search_htmax_ceramics",
+                  "renderResult": "render_htmax_ceramics",
+                  "getResultValue": "get_htmax_ceramics_value",
+                  "autoSelect": true,
+                  "debounceTime": 500
+                }
+              },
+              "default": ""
+            },
+            {
+              "title": "Generic Ceramic",
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 4,
+              "pattern": "^[A-Z].*$",
+              "enum": [
+                "SiC",
+                "B4C",
+                "TaC",
+                "HfC",
+                "TiC",
+                "NbC"
+              ],
+              "options": {
+                "enum_titles": [
+                  "Silicon Carbide",
+                  "Boron Carbide",
+                  "Tantalum Carbide",
+                  "Hafnium Carbide",
+                  "Titanium Carbide",
+                  "Niobium Carbide"
+                ]
+              }
+            }
+          ]
         },
         "vol": {
-          "type": "number"
+          "type": "number",
+          "title": "Vol (%)"
         }
       }
     },
@@ -64,6 +89,7 @@
           "default": "MC"
         },
         "vol": {
+          "title": "Vol (%)",
           "type": "number"
         }
       }
@@ -80,6 +106,7 @@
           "default": "DI-W"
         },
         "vol": {
+          "title": "Vol (%)",
           "type": "number"
         }
       }

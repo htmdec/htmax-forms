@@ -1,3 +1,30 @@
+window.JSONEditor.defaults.callbacks.autocomplete = {
+    'search_htmax_ceramics': function (editor, input) {
+        if (input.length < 2) {
+            return [];
+        }
+
+        return restRequest({
+            url: 'entry/search',
+            method: 'GET',
+            data: {
+                query: input,
+                field: "sampleId",
+                formId: "6806d211ea22f05733fa827b",
+                limit: 15
+            }
+        })
+    },
+    'render_htmax_ceramics': function (editor, result, props) {
+        const [entryId, sampleId] = result.split(';');
+        return `<li ${props}> ${sampleId}</li>`;
+    },
+    'get_htmax_ceramics_value': function (editor, result) {
+        const [entryId, sampleId] = result.split(';');
+        return `${entryId};${sampleId}`;
+    }
+};
+
 Handlebars.registerHelper('sampleRoot', function(compounds, mass) {
   // Helper function to extract chemical symbol (first capital + optional lowercase)
   if (!compounds) return '';
@@ -21,6 +48,11 @@ Handlebars.registerHelper('sampleRoot', function(compounds, mass) {
   
   // Extract the element name (assumed to be the first word)
   const getSymbol = (compoundName) => {
+    if (compoundName.includes(';')) {
+      compoundName = compoundName.split(';')[1]; // Take the first part before any semicolon
+      compoundName = compoundName.split('_')[0]; // Remove any underscores if present
+      return `(${compoundName})`; // Return in parentheses
+    }
     const firstWord = compoundName.split(' ')[0];
     return elementToSymbol[firstWord] || firstWord[0]; // fallback: first letter
   };
