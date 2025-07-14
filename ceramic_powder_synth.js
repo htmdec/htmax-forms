@@ -28,6 +28,8 @@ window.JSONEditor.defaults.callbacks.autocomplete = {
 Handlebars.registerHelper('processName', function (process) {
     if (process === "CH4") {
         return "Gas carburization in 10% CH4/Bal Ar";
+    } else if (process === "NH3") {
+        return "Gas nitridation in 10% NH3/Bal Ar";
     } else {
         return process;
     }

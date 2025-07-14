@@ -306,11 +306,13 @@
       "title": "Synthesis Process",
       "type": "string",
       "enum": [
-        "CH4"
+        "CH4",
+        "NH3"
       ],
       "options": {
         "enum_titles": [
-          "Gas carburization in 10% CH4/Bal Ar"
+          "Gas carburization in 10% CH4/Bal Ar",
+          "Gas nitridation in 10% NH3/Bal Ar"
         ]
       }
     },
