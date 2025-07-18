@@ -68,7 +68,6 @@ Handlebars.registerHelper('igsnTitle', function (sampleId) {
         return '';
     }
     const inputString = sampleId.split('_')[0];
-    console.log(inputString);
      // Define map from element symbols to their compound forms
     const compoundMap = {
         Si: 'SiC',
@@ -100,7 +99,6 @@ Handlebars.registerHelper('igsnTitle', function (sampleId) {
         materials.push(compoundMap[match[1]] || match[1]);   // Capture Group 1: The material string
         percentages.push(match[2]); // Capture Group 2: The percentage string
     }
-    console.log(materials, percentages);
 
     // Join the collected materials with a '+' sign.
     const materialsPart = materials.join('+');
