@@ -98,10 +98,10 @@
           "propertyOrder": 2,
           "description": "The unique identifier for the build.",
           "hidden": true,
-          "template": "{{org}}{{gJH}}{{material}}{{sCR}}",
+          "template": "{{org}}{{gML}}{{material}}{{sCR}}",
           "watch": {
             "org": "root.igsnMeta.institution",
-            "gJH": "root.igsnMeta.groupJH",
+            "gML": "root.igsnMeta.groupML",
             "material": "root.igsnMeta.material",
             "sCR": "root.igsnMeta.submaterialCR"
           },
@@ -171,15 +171,33 @@
           "type": "string",
           "description": "Originating Institution",
           "enum": [
-            "JH"
+            "JH",
+            "ML"
           ],
-          "default": "JH",
+          "default": "ML",
           "propertyOrder": 1,
           "options": {
             "titleHidden": true,
             "grid_columns": 3,
             "enum_titles": [
-              "Johns Hopkins University"
+              "Johns Hopkins University",
+              "University of Massachusetts, Lowell"
+            ]
+          }
+        },
+        "groupML": {
+          "type": "string",
+          "description": "Group within the institution",
+          "enum": [
+            "X"
+          ],
+          "default": "X",
+          "propertyOrder": 2,
+          "options": {
+            "titleHidden": true,
+            "grid_columns": 3,
+            "enum_titles": [
+              "Other"
             ]
           }
         },
