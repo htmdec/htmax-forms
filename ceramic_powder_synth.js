@@ -25,6 +25,18 @@ window.JSONEditor.defaults.callbacks.autocomplete = {
     }
 };
 
+Handlebars.registerHelper('suffixCounter', function(count) {
+    try {
+        if (count > 1 && count < 10) {
+            return `_${count}`;
+        } else {
+            return '';
+        }
+    } catch (e) {
+        return '';
+    }
+});
+
 Handlebars.registerHelper('processName', function (process) {
     if (process === "CH4") {
         return "Gas carburization in 10% CH4/Bal Ar";
