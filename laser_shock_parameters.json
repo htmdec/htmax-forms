@@ -1,0 +1,414 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Laser Shock Experiment Parameters",
+    "type": "object",
+    "properties": {
+        "Timestamp": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "format": "date-time",
+            "examples": [
+                "2025-08-11 17:59:15.979000"
+            ],
+            "options": {
+                "propertyOrder": 1
+            }
+        },
+        "Exp_ID": {
+            "type": [
+                "integer",
+                "null"
+            ],
+            "examples": [
+                "1"
+            ],
+            "options": {
+                "propertyOrder": 2
+            }
+        },
+        "Flyer_ID": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "enum": [
+                "F410"
+            ],
+            "examples": [
+                "F410"
+            ],
+            "options": {
+                "propertyOrder": 3
+            }
+        },
+        "Flyer_material": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "enum": [
+                "Al"
+            ],
+            "examples": [
+                "Al"
+            ],
+            "options": {
+                "propertyOrder": 4
+            }
+        },
+        "Flyer_Thickness (um)": {
+            "type": [
+                "integer",
+                "null"
+            ],
+            "examples": [
+                "100"
+            ],
+            "options": {
+                "propertyOrder": 5
+            }
+        },
+        "Sample_ID": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "enum": [
+                "JHAMAA00001-S5R6C3"
+            ],
+            "examples": [
+                "JHAMAA00001-S5R6C3"
+            ],
+            "options": {
+                "propertyOrder": 6
+            }
+        },
+        "Sample material": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "enum": [
+                "Al-Mg"
+            ],
+            "examples": [
+                "Al-Mg"
+            ],
+            "options": {
+                "propertyOrder": 7
+            }
+        },
+        "Spacing (um)": {
+            "type": [
+                "integer",
+                "null"
+            ],
+            "examples": [
+                "285"
+            ],
+            "options": {
+                "propertyOrder": 8
+            }
+        },
+        "Waveplate_Angle (Degrees)": {
+            "type": [
+                "integer",
+                "null"
+            ],
+            "examples": [
+                "34"
+            ],
+            "options": {
+                "propertyOrder": 9
+            }
+        },
+        "PDV_FileName": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "enum": [
+                "C1--20250811--00026"
+            ],
+            "examples": [
+                "C1--20250811--00026"
+            ],
+            "options": {
+                "propertyOrder": 10
+            }
+        },
+        "name": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Mirrors PDV_FileName",
+            "examples": [
+                "C1--20250811--00026"
+            ],
+            "options": {
+                "propertyOrder": 11
+            },
+            "watch": {
+                "PDV_FileName": "PDV_FileName"
+            },
+            "template": "{{PDV_FileName}}"
+        },
+        "PDV_Target_Wavelength (m)": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "examples": [
+                "1.55e-06"
+            ],
+            "options": {
+                "propertyOrder": 12
+            }
+        },
+        "PDV_Target_Power (dBm)": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "examples": [
+                "10.19"
+            ],
+            "options": {
+                "propertyOrder": 13
+            }
+        },
+        "PDV_Ref_Wavelength (m)": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "examples": [
+                "1.550016e-06"
+            ],
+            "options": {
+                "propertyOrder": 14
+            }
+        },
+        "PDV_Ref_Power (dBm)": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "examples": [
+                "7.49"
+            ],
+            "options": {
+                "propertyOrder": 15
+            }
+        },
+        "PDV_Return_Power (dBm)": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "examples": [
+                "-19.35"
+            ],
+            "options": {
+                "propertyOrder": 16
+            }
+        },
+        "Flyer_Row": {
+            "type": [
+                "integer",
+                "null"
+            ],
+            "examples": [
+                "1"
+            ],
+            "options": {
+                "propertyOrder": 17
+            }
+        },
+        "Flyer_Column": {
+            "type": [
+                "integer",
+                "null"
+            ],
+            "examples": [
+                "5"
+            ],
+            "options": {
+                "propertyOrder": 18
+            }
+        },
+        "Flyer_X_Position_Desired (mm)": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "examples": [
+                "39.87"
+            ],
+            "options": {
+                "propertyOrder": 19
+            }
+        },
+        "Flyer_Y_Position_desired (mm)": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "examples": [
+                "-6.15"
+            ],
+            "options": {
+                "propertyOrder": 20
+            }
+        },
+        "Flyer_X_Position_Corrected (mm)": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "examples": [
+                "39.6137"
+            ],
+            "options": {
+                "propertyOrder": 21
+            }
+        },
+        "Flyer_Y_Position_Corrected (mm)": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "examples": [
+                "-6.2938"
+            ],
+            "options": {
+                "propertyOrder": 22
+            }
+        },
+        "Flyer_X_Position_Final (mm)": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "examples": [
+                "2.9563"
+            ],
+            "options": {
+                "propertyOrder": 23
+            }
+        },
+        "Flyer_Y_Position_Final (mm)": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "examples": [
+                "2.9875"
+            ],
+            "options": {
+                "propertyOrder": 24
+            }
+        },
+        "Laser_Ref_Energy (mJ)": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "examples": [
+                "102.18"
+            ],
+            "options": {
+                "propertyOrder": 25
+            }
+        },
+        "Laser_Target_Energy (mJ)": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "examples": [
+                "1168.85"
+            ],
+            "options": {
+                "propertyOrder": 26
+            }
+        },
+        "Beam_Profile_FileName": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "enum": [
+                "Beam--20250811--00026"
+            ],
+            "examples": [
+                "Beam--20250811--00026"
+            ],
+            "options": {
+                "propertyOrder": 27
+            }
+        },
+        "Shot_Time (seconds)": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "examples": [
+                "7.86"
+            ],
+            "options": {
+                "propertyOrder": 28
+            }
+        },
+        "Notes": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "enum": [
+                "Sucessful laser shot"
+            ],
+            "examples": [
+                "Sucessful laser shot"
+            ],
+            "options": {
+                "propertyOrder": 29
+            }
+        }
+    },
+    "required": [
+        "Timestamp",
+        "Exp_ID",
+        "Flyer_ID",
+        "Flyer_material",
+        "Flyer_Thickness (um)",
+        "Sample_ID",
+        "Sample material",
+        "Spacing (um)",
+        "Waveplate_Angle (Degrees)",
+        "PDV_FileName",
+        "name",
+        "PDV_Target_Wavelength (m)",
+        "PDV_Target_Power (dBm)",
+        "PDV_Ref_Wavelength (m)",
+        "PDV_Ref_Power (dBm)",
+        "PDV_Return_Power (dBm)",
+        "Flyer_Row",
+        "Flyer_Column",
+        "Flyer_X_Position_Desired (mm)",
+        "Flyer_Y_Position_desired (mm)",
+        "Flyer_X_Position_Corrected (mm)",
+        "Flyer_Y_Position_Corrected (mm)",
+        "Flyer_X_Position_Final (mm)",
+        "Flyer_Y_Position_Final (mm)",
+        "Laser_Ref_Energy (mJ)",
+        "Laser_Target_Energy (mJ)",
+        "Beam_Profile_FileName",
+        "Shot_Time (seconds)",
+        "Notes"
+    ],
+    "additionalProperties": false
+}
