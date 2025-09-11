@@ -4,6 +4,127 @@
     "type": "object",
     "properties": {
         "Timestamp": {
+            "$ref": "#/definitions/Timestamp"
+        },
+        "Exp_ID": {
+            "$ref": "#/definitions/Exp_ID"
+        },
+        "Flyer_ID": {
+            "$ref": "#/definitions/Flyer_ID"
+        },
+        "Flyer_material": {
+            "$ref": "#/definitions/Flyer_material"
+        },
+        "Flyer_Thickness (um)": {
+            "$ref": "#/definitions/Flyer_Thickness (um)"
+        },
+        "Sample_ID": {
+            "$ref": "#/definitions/Sample_ID"
+        },
+        "Sample material": {
+            "$ref": "#/definitions/Sample material"
+        },
+        "Spacing (um)": {
+            "$ref": "#/definitions/Spacing (um)"
+        },
+        "Waveplate_Angle (Degrees)": {
+            "$ref": "#/definitions/Waveplate_Angle (Degrees)"
+        },
+        "PDV_FileName": {
+            "$ref": "#/definitions/PDV_FileName"
+        },
+        "name": {
+            "$ref": "#/definitions/name"
+        },
+        "PDV_Target_Wavelength (m)": {
+            "$ref": "#/definitions/PDV_Target_Wavelength (m)"
+        },
+        "PDV_Target_Power (dBm)": {
+            "$ref": "#/definitions/PDV_Target_Power (dBm)"
+        },
+        "PDV_Ref_Wavelength (m)": {
+            "$ref": "#/definitions/PDV_Ref_Wavelength (m)"
+        },
+        "PDV_Ref_Power (dBm)": {
+            "$ref": "#/definitions/PDV_Ref_Power (dBm)"
+        },
+        "PDV_Return_Power (dBm)": {
+            "$ref": "#/definitions/PDV_Return_Power (dBm)"
+        },
+        "Flyer_Row": {
+            "$ref": "#/definitions/Flyer_Row"
+        },
+        "Flyer_Column": {
+            "$ref": "#/definitions/Flyer_Column"
+        },
+        "Flyer_X_Position_Desired (mm)": {
+            "$ref": "#/definitions/Flyer_X_Position_Desired (mm)"
+        },
+        "Flyer_Y_Position_desired (mm)": {
+            "$ref": "#/definitions/Flyer_Y_Position_desired (mm)"
+        },
+        "Flyer_X_Position_Corrected (mm)": {
+            "$ref": "#/definitions/Flyer_X_Position_Corrected (mm)"
+        },
+        "Flyer_Y_Position_Corrected (mm)": {
+            "$ref": "#/definitions/Flyer_Y_Position_Corrected (mm)"
+        },
+        "Flyer_X_Position_Final (mm)": {
+            "$ref": "#/definitions/Flyer_X_Position_Final (mm)"
+        },
+        "Flyer_Y_Position_Final (mm)": {
+            "$ref": "#/definitions/Flyer_Y_Position_Final (mm)"
+        },
+        "Laser_Ref_Energy (mJ)": {
+            "$ref": "#/definitions/Laser_Ref_Energy (mJ)"
+        },
+        "Laser_Target_Energy (mJ)": {
+            "$ref": "#/definitions/Laser_Target_Energy (mJ)"
+        },
+        "Beam_Profile_FileName": {
+            "$ref": "#/definitions/Beam_Profile_FileName"
+        },
+        "Shot_Time (seconds)": {
+            "$ref": "#/definitions/Shot_Time (seconds)"
+        },
+        "Notes": {
+            "$ref": "#/definitions/Notes"
+        }
+    },
+    "required": [
+        "Timestamp",
+        "Exp_ID",
+        "Flyer_ID",
+        "Flyer_material",
+        "Flyer_Thickness (um)",
+        "Sample_ID",
+        "Sample material",
+        "Spacing (um)",
+        "Waveplate_Angle (Degrees)",
+        "PDV_FileName",
+        "name",
+        "PDV_Target_Wavelength (m)",
+        "PDV_Target_Power (dBm)",
+        "PDV_Ref_Wavelength (m)",
+        "PDV_Ref_Power (dBm)",
+        "PDV_Return_Power (dBm)",
+        "Flyer_Row",
+        "Flyer_Column",
+        "Flyer_X_Position_Desired (mm)",
+        "Flyer_Y_Position_desired (mm)",
+        "Flyer_X_Position_Corrected (mm)",
+        "Flyer_Y_Position_Corrected (mm)",
+        "Flyer_X_Position_Final (mm)",
+        "Flyer_Y_Position_Final (mm)",
+        "Laser_Ref_Energy (mJ)",
+        "Laser_Target_Energy (mJ)",
+        "Beam_Profile_FileName",
+        "Shot_Time (seconds)",
+        "Notes"
+    ],
+    "additionalProperties": false,
+    "definitions": {
+        "Timestamp": {
             "type": [
                 "string",
                 "null"
@@ -378,37 +499,5 @@
                 "propertyOrder": 29
             }
         }
-    },
-    "required": [
-        "Timestamp",
-        "Exp_ID",
-        "Flyer_ID",
-        "Flyer_material",
-        "Flyer_Thickness (um)",
-        "Sample_ID",
-        "Sample material",
-        "Spacing (um)",
-        "Waveplate_Angle (Degrees)",
-        "PDV_FileName",
-        "name",
-        "PDV_Target_Wavelength (m)",
-        "PDV_Target_Power (dBm)",
-        "PDV_Ref_Wavelength (m)",
-        "PDV_Ref_Power (dBm)",
-        "PDV_Return_Power (dBm)",
-        "Flyer_Row",
-        "Flyer_Column",
-        "Flyer_X_Position_Desired (mm)",
-        "Flyer_Y_Position_desired (mm)",
-        "Flyer_X_Position_Corrected (mm)",
-        "Flyer_Y_Position_Corrected (mm)",
-        "Flyer_X_Position_Final (mm)",
-        "Flyer_Y_Position_Final (mm)",
-        "Laser_Ref_Energy (mJ)",
-        "Laser_Target_Energy (mJ)",
-        "Beam_Profile_FileName",
-        "Shot_Time (seconds)",
-        "Notes"
-    ],
-    "additionalProperties": false
+    }
 }
