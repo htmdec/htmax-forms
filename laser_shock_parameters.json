@@ -1,6 +1,7 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "Laser Shock Experiment Parameters",
+    "description": "This form is designed to capture detailed metadata for laser-driven flyer plate experiments. Each entry corresponds to a single shot.",
     "type": "object",
     "properties": {
         "Timestamp": {
@@ -32,6 +33,17 @@
         "Sample_ID": {
             "type": "string",
             "title": "Sample_ID",
+            "description": "Lookup for the IGSN of the sample",
+            "format": "autocomplete",
+            "options": {
+              "autocomplete": {
+                "search": "search_deposition",
+                "renderResult": "render_deposition",
+                "getResultValue": "get_deposition_value",
+                "autoSelect": true,
+                "debounceTime": 500
+              }
+            },
             "propertyOrder": 6
         },
         "Sample_material": {
@@ -52,6 +64,7 @@
         "PDV_FileName": {
             "type": "string",
             "title": "PDV_FileName",
+            "pattern": "^[^\\s]+$",
             "propertyOrder": 10
         },
         "PDV_Target_Wavelength_m": {
@@ -133,12 +146,6 @@
             "type": "string",
             "title": "Notes",
             "propertyOrder": 26
-        },
-        "assignedIGSN": {
-            "$ref": "#/$defs/assignedIGSN"
-        },
-        "name": {
-            "$ref": "#/$defs/name"
         }
     },
     "required": [
@@ -167,33 +174,7 @@
         "Laser_Target_Energy_mJ",
         "Beam_Profile_FileName",
         "Shot_Time_seconds",
-        "Notes",
-        "name",
-        "assignedIGSN"
+        "Notes"
     ],
-    "additionalProperties": false,
-    "$defs": {
-        "name": {
-            "type": "string",
-            "description": "Mirrors PDV_FileName",
-            "title": "name",
-            "watch": {
-                "PDV_FileName": "PDV_FileName"
-            },
-            "options": {
-                "hidden": true
-            },
-            "template": "{{PDV_FileName}}"
-        },
-        "assignedIGSN": {
-            "type": "string",
-            "title": "assignedIGSN",
-            "watch": {
-                "Sample_ID": "Sample_ID"
-            },
-            "options": {
-                "hidden": true
-            }
-        }
-    }
+    "additionalProperties": false
 }
