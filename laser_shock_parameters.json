@@ -116,6 +116,16 @@
     ],
     "additionalProperties": false,
     "$defs": {
+        "assignedIGSN": {
+            "type": "string",
+            "propertyOrder": 0,
+            "watch": {
+                "Sample_ID": "Sample_ID"
+            },
+            "options": {
+                "hidden": true
+            }
+        },
         "Timestamp": {
             "type": "string",
             "format": "date-time",
@@ -224,7 +234,8 @@
                 "C1--20250811--00026"
             ],
             "options": {
-                "propertyOrder": 11
+                "propertyOrder": 11,
+                "hidden": true
             },
             "watch": {
                 "PDV_FileName": "PDV_FileName"
