@@ -7,7 +7,7 @@
       "format": "grid",
       "properties": {
         "width": {
-          "type": "number",
+          "type": ["number", "null"],
           "title": "Horizon (x, mm)",
           "options": {
             "grid_columns": 3
@@ -15,7 +15,7 @@
           "propertyOrder": 1
         },
         "height": {
-          "type": "number",
+          "type": ["number", "null"],
           "title": "Vertical (y, mm)",
           "options": {
             "grid_columns": 3
@@ -23,7 +23,7 @@
           "propertyOrder": 2
         },
         "thickness": {
-          "type": "number",
+          "type": ["number", "null"],
           "title": "Thickness (z, mm)",
           "options": {
             "grid_columns": 3
@@ -31,7 +31,7 @@
           "propertyOrder": 3
         },
         "dryMass": {
-          "type": "number",
+          "type": ["number", "null"],
           "title": "Dry mass (g)",
           "options": {
             "grid_columns": 3
