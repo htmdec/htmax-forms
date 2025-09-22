@@ -185,29 +185,13 @@
             "title": "Flyer_Y_Position_Final (mm)",
             "propertyOrder": 21
         },
-        "Flyer_X_Position_Corrected_mm": {
-            "type": [
-                "number",
-                "null"
-            ],
-            "title": "Flyer_X_Position_Corrected (mm)",
-            "propertyOrder": 22
-        },
-        "Flyer_Y_Position_Corrected_mm": {
-            "type": [
-                "number",
-                "null"
-            ],
-            "title": "Flyer_Y_Position_Corrected (mm)",
-            "propertyOrder": 23
-        },
         "Laser_Ref_Energy_mJ": {
             "type": [
                 "number",
                 "null"
             ],
             "title": "Laser_Ref_Energy (mJ)",
-            "propertyOrder": 24
+            "propertyOrder": 22
         },
         "Laser_Target_Energy_mJ": {
             "type": [
@@ -215,7 +199,7 @@
                 "null"
             ],
             "title": "Laser_Target_Energy (mJ)",
-            "propertyOrder": 25
+            "propertyOrder": 23
         },
         "Beam_Profile_FileName": {
             "type": [
@@ -223,7 +207,7 @@
                 "null"
             ],
             "title": "Beam_Profile_FileName",
-            "propertyOrder": 26
+            "propertyOrder": 24
         },
         "Shot_Time_seconds": {
             "type": [
@@ -231,7 +215,7 @@
                 "null"
             ],
             "title": "Shot_Time (seconds)",
-            "propertyOrder": 27
+            "propertyOrder": 25
         },
         "Notes": {
             "type": [
@@ -239,7 +223,7 @@
                 "null"
             ],
             "title": "Notes",
-            "propertyOrder": 28
+            "propertyOrder": 26
         }
     },
     "required": [
@@ -264,8 +248,6 @@
         "Flyer_Y_Position_Desired_mm",
         "Flyer_X_Position_Final_mm",
         "Flyer_Y_Position_Final_mm",
-        "Flyer_X_Position_Corrected_mm",
-        "Flyer_Y_Position_Corrected_mm",
         "Laser_Ref_Energy_mJ",
         "Laser_Target_Energy_mJ",
         "Beam_Profile_FileName",
