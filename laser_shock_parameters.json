@@ -21,12 +21,12 @@
             "title": "Exp_ID",
             "propertyOrder": 2
         },
-        "Experiment_type": {
+        "Exp_type": {
             "type": [
                 "string",
                 "null"
             ],
-            "title": "Experiment type",
+            "title": "Exp_type",
             "propertyOrder": 3
         },
         "Flyer_ID": {
@@ -238,7 +238,7 @@
                 "string",
                 "null"
             ],
-            "title": "Performed By",
+            "title": "Performed_by",
             "propertyOrder": 28
         },
         "Grant": {
@@ -261,7 +261,7 @@
     "required": [
         "Timestamp",
         "Exp_ID",
-        "Experiment_type",
+        "Exp_type",
         "Flyer_ID",
         "Flyer_material",
         "Flyer_Thickness_um",
