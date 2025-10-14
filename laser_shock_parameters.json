@@ -256,7 +256,7 @@
             ],
             "title": "Location",
             "propertyOrder": 30
-        },
+        }
     },
     "required": [
         "Timestamp",
