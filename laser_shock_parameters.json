@@ -224,6 +224,38 @@
             ],
             "title": "Notes",
             "propertyOrder": 26
+        },
+        "Performed_by": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "title": "Performed By",
+            "propertyOrder": 27
+        },
+        "Grant": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "title": "Grant",
+            "propertyOrder": 28
+        },
+        "Location": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "title": "Location",
+            "propertyOrder": 29
+        },
+        "Experiment_type": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "title": "Experiment type",
+            "propertyOrder": 30
         }
     },
     "required": [
@@ -252,7 +284,11 @@
         "Laser_Target_Energy_mJ",
         "Beam_Profile_FileName",
         "Shot_Time_seconds",
-        "Notes"
+        "Notes",
+        "Performed_by",
+        "Grant",
+        "Location",
+        "Experiment_type"
     ],
-    "additionalProperties": false
+    "additionalProperties": true
 }
