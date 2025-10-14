@@ -288,7 +288,7 @@
         "Notes",
         "Performed_by",
         "Grant",
-        "Location",
+        "Location"
     ],
     "additionalProperties": true
 }
