@@ -3,20 +3,10 @@
     "title": "ALPSS Result Schema",
     "type": "object",
     "properties": {
-        "date": {
-            "type": "string",
-            "title": "Date",
-            "propertyOrder": 1
-        },
-        "time": {
-            "type": "string",
-            "title": "Time",
-            "propertyOrder": 2
-        },
         "file_name": {
             "type": "string",
             "title": "File Name",
-            "propertyOrder": 3
+            "propertyOrder": 1
         },
         "Sample_IGSN": {
             "type": [
@@ -35,102 +25,102 @@
                     "debounceTime": 500
                 }
             },
-            "propertyOrder": 4
+            "propertyOrder": 2
         },
         "run_time": {
             "type": "number",
             "title": "Run Time",
-            "propertyOrder": 5
+            "propertyOrder": 3
         },
         "velocity_at_max_compression": {
             "type": "number",
             "title": "Velocity at Max Compression",
-            "propertyOrder": 6
+            "propertyOrder": 4
         },
         "time_at_max_compression": {
             "type": "number",
             "title": "Time at Max Compression",
-            "propertyOrder": 7
+            "propertyOrder": 5
         },
         "velocity_at_max_tension": {
             "type": "number",
             "title": "Velocity at Max Tension",
-            "propertyOrder": 8
+            "propertyOrder": 6
         },
         "time_at_max_tension": {
             "type": "number",
             "title": "Time at Max Tension",
-            "propertyOrder": 9
+            "propertyOrder": 7
         },
         "velocity_at_recompression": {
             "type": "number",
             "title": "Velocity at Recompression",
-            "propertyOrder": 10
+            "propertyOrder": 8
         },
         "time_at_recompression": {
             "type": "number",
             "title": "Time at Recompression",
-            "propertyOrder": 11
+            "propertyOrder": 9
         },
         "carrier_frequency": {
             "type": "number",
             "title": "Carrier Frequency",
-            "propertyOrder": 12
+            "propertyOrder": 10
         },
         "spall_strength": {
             "type": "number",
             "title": "Spall Strength",
-            "propertyOrder": 13
+            "propertyOrder": 11
         },
         "spall_strength_uncertainty": {
             "type": "number",
             "title": "Spall Strength Uncertainty",
-            "propertyOrder": 14
+            "propertyOrder": 12
         },
         "strain_rate": {
             "type": "number",
             "title": "Strain Rate",
-            "propertyOrder": 15
+            "propertyOrder": 13
         },
         "strain_rate_uncertainty": {
             "type": "number",
             "title": "Strain Rate Uncertainty",
-            "propertyOrder": 16
+            "propertyOrder": 14
         },
         "peak_shock_stress": {
             "type": "number",
             "title": "Peak Shock Stress",
-            "propertyOrder": 17
+            "propertyOrder": 15
         },
         "spect_time_res": {
             "type": "number",
             "title": "Spect Time Res",
-            "propertyOrder": 18
+            "propertyOrder": 16
         },
         "spect_freq_res": {
             "type": "number",
             "title": "Spect Freq Res",
-            "propertyOrder": 19
+            "propertyOrder": 17
         },
         "spect_velocity_res": {
             "type": "number",
             "title": "Spect Velocity Res",
-            "propertyOrder": 20
+            "propertyOrder": 18
         },
         "signal_start_time": {
             "type": "number",
             "title": "Signal Start Time",
-            "propertyOrder": 21
+            "propertyOrder": 19
         },
         "smoothing_characteristic_time": {
             "type": "number",
             "title": "Smoothing Characteristic Time",
-            "propertyOrder": 22
+            "propertyOrder": 20
         },
         "version": {
             "type": "string",
             "title": "Version",
-            "propertyOrder": 23
+            "propertyOrder": 21
         }
     },
     "required": [
