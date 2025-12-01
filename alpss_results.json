@@ -1,0 +1,91 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "PDV Result Schema",
+    "type": "object",
+    "properties": {
+        "Date": {
+            "type": "string"
+        },
+        "Time": {
+            "type": "string"
+        },
+        "File Name": {
+            "type": "string"
+        },
+        "Run Time": {
+            "type": "number"
+        },
+        "Velocity at Max Compression": {
+            "type": "number"
+        },
+        "Time at Max Compression": {
+            "type": "number"
+        },
+        "Velocity at Max Tension": {
+            "type": "number"
+        },
+        "Time at Max Tension": {
+            "type": "number"
+        },
+        "Velocity at Recompression": {
+            "type": "number"
+        },
+        "Time at Recompression": {
+            "type": "number"
+        },
+        "Carrier Frequency": {
+            "type": "number"
+        },
+        "Spall Strength": {
+            "type": "number"
+        },
+        "Spall Strength Uncertainty": {
+            "type": "number"
+        },
+        "Strain Rate": {
+            "type": "number"
+        },
+        "Strain Rate Uncertainty": {
+            "type": "number"
+        },
+        "Peak Shock Stress": {
+            "type": "number"
+        },
+        "Spect Time Res": {
+            "type": "number"
+        },
+        "Spect Freq Res": {
+            "type": "number"
+        },
+        "Spect Velocity Res": {
+            "type": "number"
+        },
+        "Signal Start Time": {
+            "type": "number"
+        },
+        "Smoothing Characteristic Time": {
+            "type": "number"
+        }
+    },
+    "required": [
+        "File Name",
+        "Run Time",
+        "Velocity at Max Compression",
+        "Time at Max Compression",
+        "Velocity at Max Tension",
+        "Time at Max Tension",
+        "Velocity at Recompression",
+        "Time at Recompression",
+        "Carrier Frequency",
+        "Spall Strength",
+        "Spall Strength Uncertainty",
+        "Strain Rate",
+        "Strain Rate Uncertainty",
+        "Peak Shock Stress",
+        "Spect Time Res",
+        "Spect Freq Res",
+        "Spect Velocity Res",
+        "Signal Start Time",
+        "Smoothing Characteristic Time"
+    ]
+}
