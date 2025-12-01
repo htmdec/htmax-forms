@@ -126,6 +126,11 @@
             "type": "number",
             "title": "Smoothing Characteristic Time",
             "propertyOrder": 22
+        },
+        "version": {
+            "type": "string",
+            "title": "Version",
+            "propertyOrder": 23
         }
     },
     "required": [
@@ -147,6 +152,7 @@
         "spect_freq_res",
         "spect_velocity_res",
         "signal_start_time",
-        "smoothing_characteristic_time"
+        "smoothing_characteristic_time",
+        "version"
     ]
 }
