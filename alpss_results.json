@@ -3,9 +3,8 @@
     "title": "ALPSS Result Schema",
     "type": "object",
     "properties": {
-        "file_name": {
+        "File Name": {
             "type": "string",
-            "title": "File Name",
             "propertyOrder": 1
         },
         "Sample_IGSN": {
@@ -13,7 +12,6 @@
                 "string",
                 "null"
             ],
-            "title": "Sample_IGSN",
             "description": "Lookup for the IGSN of the sample",
             "format": "autocomplete",
             "options": {
@@ -27,122 +25,103 @@
             },
             "propertyOrder": 2
         },
-        "run_time": {
+        "Run Time": {
             "type": "number",
-            "title": "Run Time",
             "propertyOrder": 3
         },
-        "velocity_at_max_compression": {
+        "Velocity at Max Compression": {
             "type": "number",
-            "title": "Velocity at Max Compression",
             "propertyOrder": 4
         },
-        "time_at_max_compression": {
+        "Time at Max Compression": {
             "type": "number",
-            "title": "Time at Max Compression",
             "propertyOrder": 5
         },
-        "velocity_at_max_tension": {
+        "Velocity at Max Tension": {
             "type": "number",
-            "title": "Velocity at Max Tension",
             "propertyOrder": 6
         },
-        "time_at_max_tension": {
+        "Time at Max Tension": {
             "type": "number",
-            "title": "Time at Max Tension",
             "propertyOrder": 7
         },
-        "velocity_at_recompression": {
+        "Velocity at Recompression": {
             "type": "number",
-            "title": "Velocity at Recompression",
             "propertyOrder": 8
         },
-        "time_at_recompression": {
+        "Time at Recompression": {
             "type": "number",
-            "title": "Time at Recompression",
             "propertyOrder": 9
         },
-        "carrier_frequency": {
+        "Carrier Frequency": {
             "type": "number",
-            "title": "Carrier Frequency",
             "propertyOrder": 10
         },
-        "spall_strength": {
+        "Spall Strength": {
             "type": "number",
-            "title": "Spall Strength",
             "propertyOrder": 11
         },
-        "spall_strength_uncertainty": {
+        "Spall Strength Uncertainty": {
             "type": "number",
-            "title": "Spall Strength Uncertainty",
             "propertyOrder": 12
         },
-        "strain_rate": {
+        "Strain Rate": {
             "type": "number",
-            "title": "Strain Rate",
             "propertyOrder": 13
         },
-        "strain_rate_uncertainty": {
+        "Strain Rate Uncertainty": {
             "type": "number",
-            "title": "Strain Rate Uncertainty",
             "propertyOrder": 14
         },
-        "peak_shock_stress": {
+        "Peak Shock Stress": {
             "type": "number",
-            "title": "Peak Shock Stress",
             "propertyOrder": 15
         },
-        "spect_time_res": {
+        "Spect Time Res": {
             "type": "number",
-            "title": "Spect Time Res",
             "propertyOrder": 16
         },
-        "spect_freq_res": {
+        "Spect Freq Res": {
             "type": "number",
-            "title": "Spect Freq Res",
             "propertyOrder": 17
         },
-        "spect_velocity_res": {
+        "Spect Velocity Res": {
             "type": "number",
-            "title": "Spect Velocity Res",
             "propertyOrder": 18
         },
-        "signal_start_time": {
+        "Signal Start Time": {
             "type": "number",
-            "title": "Signal Start Time",
             "propertyOrder": 19
         },
-        "smoothing_characteristic_time": {
+        "Smoothing Characteristic Time": {
             "type": "number",
-            "title": "Smoothing Characteristic Time",
             "propertyOrder": 20
         },
-        "version": {
+        "Version": {
             "type": "string",
-            "title": "Version",
             "propertyOrder": 21
         }
     },
     "required": [
-        "file_name",
-        "run_time",
-        "velocity_at_max_compression",
-        "time_at_max_compression",
-        "velocity_at_max_tension",
-        "time_at_max_tension",
-        "velocity_at_recompression",
-        "time_at_recompression",
-        "carrier_frequency",
-        "spall_strength",
-        "spall_strength_uncertainty",
-        "strain_rate",
-        "strain_rate_uncertainty",
-        "peak_shock_stress",
-        "spect_time_res",
-        "spect_freq_res",
-        "spect_velocity_res",
-        "signal_start_time",
-        "smoothing_characteristic_time",
-        "version"
+        "File Name",
+        "Run Time",
+        "Velocity at Max Compression",
+        "Time at Max Compression",
+        "Velocity at Max Tension",
+        "Time at Max Tension",
+        "Velocity at Recompression",
+        "Time at Recompression",
+        "Carrier Frequency",
+        "Spall Strength",
+        "Spall Strength Uncertainty",
+        "Strain Rate",
+        "Strain Rate Uncertainty",
+        "Peak Shock Stress",
+        "Spect Time Res",
+        "Spect Freq Res",
+        "Spect Velocity Res",
+        "Signal Start Time",
+        "Smoothing Characteristic Time",
+        "Version"
     ]
 }
