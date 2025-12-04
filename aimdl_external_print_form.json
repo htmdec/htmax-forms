@@ -1,0 +1,101 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Print Form",
+    "type": "object",
+    "properties": {
+        "Powder_IGSN": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "title": "Powder IGSN",
+            "description": "Lookup for the IGSN of the powder",
+            "format": "autocomplete",
+            "options": {
+                "autocomplete": {
+                    "search": "search_deposition",
+                    "renderResult": "render_deposition",
+                    "getResultValue": "get_deposition_value",
+                    "autoSelect": true,
+                    "debounceTime": 500
+                }
+            },
+            "propertyOrder": 1
+        },
+        "laserPower": {
+            "title": "Laser Power (W)",
+            "type": "number",
+            "description": "PRC-3-2-3",
+            "minimum": 0,
+            "maximum": 370,
+            "propertyOrder": 2
+        },
+        "laserVelocity": {
+            "title": "Laser Velocity (mm/s)",
+            "type": "number",
+            "description": "PRC-3-2-9",
+            "minimum": 0,
+            "maximum": 10000,
+            "propertyOrder": 3
+        },
+        "powderFlowRate": {
+            "title": "Powder Flow Rate (g/min)",
+            "type": "number",
+            "minimum": 0,
+            "maximum": 200,
+            "propertyOrder": 4
+        },
+        "flowGas": {
+            "title": "Flow Gas",
+            "type": "object",
+            "format": "grid",
+            "propertyOrder": 5,
+            "properties": {
+                "type": {
+                    "title": "Gas Type",
+                    "description": "MAT-4-4",
+                    "type": "string",
+                    "enum": [
+                        "Ar",
+                        "N2"
+                    ],
+                    "propertyOrder": 0
+                },
+                "flowRate": {
+                    "title": "Flow Rate (lpm)",
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 10,
+                    "propertyOrder": 1
+                },
+                "o2Concentration": {
+                    "title": "Oxygen Concentration (%)",
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 100,
+                    "propertyOrder": 2
+                }
+            },
+            "required": [
+                "type",
+                "o2Concentration"
+            ]
+        },
+        "sampleThickness": {
+            "title": "Sample Thickness (mm)",
+            "type": "number",
+            "minimum": 0,
+            "maximum": 50,
+            "propertyOrder": 6
+        },
+        "buildFile": {
+            "title": "Build File",
+            "type": [
+                "string",
+                "null"
+            ],
+            "format": "file",
+            "propertyOrder": 7
+        }
+    }
+}
