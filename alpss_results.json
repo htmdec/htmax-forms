@@ -28,92 +28,146 @@
             "title": "Sample_IGSN"
         },
         "run_time": {
-            "type": "number",
+            "type": [
+                "number",
+                "null"
+            ],
             "propertyOrder": 3,
             "title": "Run Time"
         },
         "velocity_at_max_compression": {
-            "type": "number",
+            "type": [
+                "number",
+                "null"
+            ],
             "propertyOrder": 4,
             "title": "Velocity at Max Compression"
         },
         "time_at_max_compression": {
-            "type": "number",
+            "type": [
+                "number",
+                "null"
+            ],
             "propertyOrder": 5,
             "title": "Time at Max Compression"
         },
         "velocity_at_max_tension": {
-            "type": "number",
+            "type": [
+                "number",
+                "null"
+            ],
             "propertyOrder": 6,
             "title": "Velocity at Max Tension"
         },
         "time_at_max_tension": {
-            "type": "number",
+            "type": [
+                "number",
+                "null"
+            ],
             "propertyOrder": 7,
             "title": "Time at Max Tension"
         },
         "velocity_at_recompression": {
-            "type": "number",
+            "type": [
+                "number",
+                "null"
+            ],
             "propertyOrder": 8,
             "title": "Velocity at Recompression"
         },
         "time_at_recompression": {
-            "type": "number",
+            "type": [
+                "number",
+                "null"
+            ],
             "propertyOrder": 9,
             "title": "Time at Recompression"
         },
         "carrier_frequency": {
-            "type": "number",
+            "type": [
+                "number",
+                "null"
+            ],
             "propertyOrder": 10,
             "title": "Carrier Frequency"
         },
         "spall_strength": {
-            "type": "number",
+            "type": [
+                "number",
+                "null"
+            ],
             "propertyOrder": 11,
             "title": "Spall Strength"
         },
         "spall_strength_uncertainty": {
-            "type": "number",
+            "type": [
+                "number",
+                "null"
+            ],
             "propertyOrder": 12,
             "title": "Spall Strength Uncertainty"
         },
         "strain_rate": {
-            "type": "number",
+            "type": [
+                "number",
+                "null"
+            ],
             "propertyOrder": 13,
             "title": "Strain Rate"
         },
         "strain_rate_uncertainty": {
-            "type": "number",
+            "type": [
+                "number",
+                "null"
+            ],
             "propertyOrder": 14,
             "title": "Strain Rate Uncertainty"
         },
         "peak_shock_stress": {
-            "type": "number",
+            "type": [
+                "number",
+                "null"
+            ],
             "propertyOrder": 15,
             "title": "Peak Shock Stress"
         },
         "spect_time_res": {
-            "type": "number",
+            "type": [
+                "number",
+                "null"
+            ],
             "propertyOrder": 16,
             "title": "Spect Time Res"
         },
         "spect_freq_res": {
-            "type": "number",
+            "type": [
+                "number",
+                "null"
+            ],
             "propertyOrder": 17,
             "title": "Spect Freq Res"
         },
         "spect_velocity_res": {
-            "type": "number",
+            "type": [
+                "number",
+                "null"
+            ],
             "propertyOrder": 18,
             "title": "Spect Velocity Res"
         },
         "signal_start_time": {
-            "type": "number",
+            "type": [
+                "number",
+                "null"
+            ],
             "propertyOrder": 19,
             "title": "Signal Start Time"
         },
         "smoothing_characteristic_time": {
-            "type": "number",
+            "type": [
+                "number",
+                "null"
+            ],
             "propertyOrder": 20,
             "title": "Smoothing Characteristic Time"
         },
