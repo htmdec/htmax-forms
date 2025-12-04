@@ -7,46 +7,56 @@
             "title": "Cradle ID",
             "type": "string",
             "description": "Unique identifier for this cradle configuration",
-            "pattern": "^[A-Za-z0-9_-]+$"
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "propertyOrder": 0
         },
         "cradleImage": {
             "title": "Cradle Layout Image",
             "type": "string",
             "format": "data-url",
             "description": "Reference image showing the cradle positions",
-            "propertyOrder": 0
+            "propertyOrder": 1
         },
         "positions": {
             "title": "Cradle Sample Placement (3×3)",
             "type": "object",
             "format": "grid",
-            "propertyOrder": 1,
+            "propertyOrder": 2,
             "properties": {
                 "pos_1": {
+                    "title": "Top-Left",
                     "$ref": "#/$defs/igsnField"
                 },
                 "pos_2": {
+                    "title": "Top-Center",
                     "$ref": "#/$defs/igsnField"
                 },
                 "pos_3": {
+                    "title": "Top-Right",
                     "$ref": "#/$defs/igsnField"
                 },
                 "pos_4": {
+                    "title": "Middle-Left",
                     "$ref": "#/$defs/igsnField"
                 },
                 "pos_5": {
+                    "title": "Center",
                     "$ref": "#/$defs/igsnField"
                 },
                 "pos_6": {
+                    "title": "Middle-Right",
                     "$ref": "#/$defs/igsnField"
                 },
                 "pos_7": {
+                    "title": "Bottom-Left",
                     "$ref": "#/$defs/igsnField"
                 },
                 "pos_8": {
+                    "title": "Bottom-Center",
                     "$ref": "#/$defs/igsnField"
                 },
                 "pos_9": {
+                    "title": "Bottom-Right",
                     "$ref": "#/$defs/igsnField"
                 }
             }
