@@ -3,6 +3,12 @@
     "title": "Cradle Configuration",
     "type": "object",
     "properties": {
+        "cradle_id": {
+            "title": "Cradle ID",
+            "type": "string",
+            "description": "Unique identifier for this cradle configuration",
+            "pattern": "^[A-Za-z0-9_-]+$"
+        },
         "cradleImage": {
             "title": "Cradle Layout Image",
             "type": "string",
