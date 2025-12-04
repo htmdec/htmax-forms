@@ -1,0 +1,69 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Cradle Configuration",
+    "type": "object",
+    "properties": {
+        "cradleImage": {
+            "title": "Cradle Layout Image",
+            "type": "string",
+            "format": "data-url",
+            "description": "Reference image showing the cradle positions",
+            "propertyOrder": 0
+        },
+        "positions": {
+            "title": "Cradle Sample Placement (3×3)",
+            "type": "object",
+            "format": "grid",
+            "propertyOrder": 1,
+            "properties": {
+                "pos_1": {
+                    "$ref": "#/$defs/igsnField"
+                },
+                "pos_2": {
+                    "$ref": "#/$defs/igsnField"
+                },
+                "pos_3": {
+                    "$ref": "#/$defs/igsnField"
+                },
+                "pos_4": {
+                    "$ref": "#/$defs/igsnField"
+                },
+                "pos_5": {
+                    "$ref": "#/$defs/igsnField"
+                },
+                "pos_6": {
+                    "$ref": "#/$defs/igsnField"
+                },
+                "pos_7": {
+                    "$ref": "#/$defs/igsnField"
+                },
+                "pos_8": {
+                    "$ref": "#/$defs/igsnField"
+                },
+                "pos_9": {
+                    "$ref": "#/$defs/igsnField"
+                }
+            }
+        }
+    },
+    "$defs": {
+        "igsnField": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "title": "Sample IGSN",
+            "format": "autocomplete",
+            "description": "Lookup for the IGSN of the sample",
+            "options": {
+                "autocomplete": {
+                    "search": "search_deposition",
+                    "renderResult": "render_deposition",
+                    "getResultValue": "get_deposition_value",
+                    "autoSelect": true,
+                    "debounceTime": 500
+                }
+            }
+        }
+    }
+}
