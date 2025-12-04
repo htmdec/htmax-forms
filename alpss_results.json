@@ -3,9 +3,10 @@
     "title": "ALPSS Result Schema",
     "type": "object",
     "properties": {
-        "File Name": {
+        "file_name": {
             "type": "string",
-            "propertyOrder": 1
+            "propertyOrder": 1,
+            "title": "File Name"
         },
         "Sample_IGSN": {
             "type": [
@@ -23,105 +24,125 @@
                     "debounceTime": 500
                 }
             },
-            "propertyOrder": 2
+            "propertyOrder": 2,
+            "title": "Sample_IGSN"
         },
-        "Run Time": {
+        "run_time": {
             "type": "number",
-            "propertyOrder": 3
+            "propertyOrder": 3,
+            "title": "Run Time"
         },
-        "Velocity at Max Compression": {
+        "velocity_at_max_compression": {
             "type": "number",
-            "propertyOrder": 4
+            "propertyOrder": 4,
+            "title": "Velocity at Max Compression"
         },
-        "Time at Max Compression": {
+        "time_at_max_compression": {
             "type": "number",
-            "propertyOrder": 5
+            "propertyOrder": 5,
+            "title": "Time at Max Compression"
         },
-        "Velocity at Max Tension": {
+        "velocity_at_max_tension": {
             "type": "number",
-            "propertyOrder": 6
+            "propertyOrder": 6,
+            "title": "Velocity at Max Tension"
         },
-        "Time at Max Tension": {
+        "time_at_max_tension": {
             "type": "number",
-            "propertyOrder": 7
+            "propertyOrder": 7,
+            "title": "Time at Max Tension"
         },
-        "Velocity at Recompression": {
+        "velocity_at_recompression": {
             "type": "number",
-            "propertyOrder": 8
+            "propertyOrder": 8,
+            "title": "Velocity at Recompression"
         },
-        "Time at Recompression": {
+        "time_at_recompression": {
             "type": "number",
-            "propertyOrder": 9
+            "propertyOrder": 9,
+            "title": "Time at Recompression"
         },
-        "Carrier Frequency": {
+        "carrier_frequency": {
             "type": "number",
-            "propertyOrder": 10
+            "propertyOrder": 10,
+            "title": "Carrier Frequency"
         },
-        "Spall Strength": {
+        "spall_strength": {
             "type": "number",
-            "propertyOrder": 11
+            "propertyOrder": 11,
+            "title": "Spall Strength"
         },
-        "Spall Strength Uncertainty": {
+        "spall_strength_uncertainty": {
             "type": "number",
-            "propertyOrder": 12
+            "propertyOrder": 12,
+            "title": "Spall Strength Uncertainty"
         },
-        "Strain Rate": {
+        "strain_rate": {
             "type": "number",
-            "propertyOrder": 13
+            "propertyOrder": 13,
+            "title": "Strain Rate"
         },
-        "Strain Rate Uncertainty": {
+        "strain_rate_uncertainty": {
             "type": "number",
-            "propertyOrder": 14
+            "propertyOrder": 14,
+            "title": "Strain Rate Uncertainty"
         },
-        "Peak Shock Stress": {
+        "peak_shock_stress": {
             "type": "number",
-            "propertyOrder": 15
+            "propertyOrder": 15,
+            "title": "Peak Shock Stress"
         },
-        "Spect Time Res": {
+        "spect_time_res": {
             "type": "number",
-            "propertyOrder": 16
+            "propertyOrder": 16,
+            "title": "Spect Time Res"
         },
-        "Spect Freq Res": {
+        "spect_freq_res": {
             "type": "number",
-            "propertyOrder": 17
+            "propertyOrder": 17,
+            "title": "Spect Freq Res"
         },
-        "Spect Velocity Res": {
+        "spect_velocity_res": {
             "type": "number",
-            "propertyOrder": 18
+            "propertyOrder": 18,
+            "title": "Spect Velocity Res"
         },
-        "Signal Start Time": {
+        "signal_start_time": {
             "type": "number",
-            "propertyOrder": 19
+            "propertyOrder": 19,
+            "title": "Signal Start Time"
         },
-        "Smoothing Characteristic Time": {
+        "smoothing_characteristic_time": {
             "type": "number",
-            "propertyOrder": 20
+            "propertyOrder": 20,
+            "title": "Smoothing Characteristic Time"
         },
-        "Version": {
+        "version": {
             "type": "string",
-            "propertyOrder": 21
+            "propertyOrder": 21,
+            "title": "Version"
         }
     },
     "required": [
-        "File Name",
-        "Run Time",
-        "Velocity at Max Compression",
-        "Time at Max Compression",
-        "Velocity at Max Tension",
-        "Time at Max Tension",
-        "Velocity at Recompression",
-        "Time at Recompression",
-        "Carrier Frequency",
-        "Spall Strength",
-        "Spall Strength Uncertainty",
-        "Strain Rate",
-        "Strain Rate Uncertainty",
-        "Peak Shock Stress",
-        "Spect Time Res",
-        "Spect Freq Res",
-        "Spect Velocity Res",
-        "Signal Start Time",
-        "Smoothing Characteristic Time",
-        "Version"
+        "file_name",
+        "run_time",
+        "velocity_at_max_compression",
+        "time_at_max_compression",
+        "velocity_at_max_tension",
+        "time_at_max_tension",
+        "velocity_at_recompression",
+        "time_at_recompression",
+        "carrier_frequency",
+        "spall_strength",
+        "spall_strength_uncertainty",
+        "strain_rate",
+        "strain_rate_uncertainty",
+        "peak_shock_stress",
+        "spect_time_res",
+        "spect_freq_res",
+        "spect_velocity_res",
+        "signal_start_time",
+        "smoothing_characteristic_time",
+        "version"
     ]
 }
