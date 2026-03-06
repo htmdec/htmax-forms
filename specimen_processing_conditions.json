@@ -432,7 +432,7 @@
             },
             "densityRatio": {
               "type": "number",
-              "title": "Measured vs theoretical density ratio",
+              "title": "Relative Density",
               "template": "{{getDensityRatio density (entryField (split powder ';' 0) 'densityCeramics')}}",
               "watch": {
                 "density": "root.sintering.afterSintering.density",
