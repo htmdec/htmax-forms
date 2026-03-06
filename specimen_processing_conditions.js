@@ -31,9 +31,12 @@ Handlebars.registerHelper('getDensityRatio', function (measured, theoretical) {
         return 0.0;
     }
 });
-Handlebars.registerHelper('getDensity', function (dryMass, wetMass) {
+Handlebars.registerHelper('getDensity', function (dryMass, wetMass, ssdMass) {
+    if (ssdMass === undefined || ssdMass === null ) {
+        ssdMass = dryMass;
+    }
     try {
-        return (dryMass / (dryMass - wetMass) * 0.997).toFixed(4);
+        return (dryMass / (ssdMass - wetMass) * 0.997).toFixed(4);
     } catch (e) {
         return 0.0;
     }

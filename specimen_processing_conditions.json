@@ -412,23 +412,32 @@
               "type": "number",
               "title": "Wet mass (g)",
               "options": {
-                "grid_columns": 4
+                "grid_columns": 3
               },
               "propertyOrder": 5
+            },
+            "ssdMass": {
+              "type": "number",
+              "title": "Saturated Surface Dry mass (g)",
+              "options": {
+                "grid_columns": 3
+              },
+              "propertyOrder": 6
             },
             "density": {
               "type": "number",
               "title": "Density (g/cm^3)",
               "watch": {
                 "wetMass": "root.sintering.afterSintering.wetMass",
-                "dryMass": "root.sintering.afterSintering.dryMass"
+                "dryMass": "root.sintering.afterSintering.dryMass",
+                "ssdMass": "root.sintering.afterSintering.ssdMass"
               },
-              "template": "{{getDensity dryMass wetMass}}",
+              "template": "{{getDensity dryMass wetMass ssdMass}}",
               "options": {
-                "grid_columns": 4
+                "grid_columns": 3
               },
               "readonly": true,
-              "propertyOrder": 6
+              "propertyOrder": 7
             },
             "densityRatio": {
               "type": "number",
@@ -439,9 +448,9 @@
                 "powder": "root.powder"
               },
               "options": {
-                "grid_columns": 4
+                "grid_columns": 3
               },
-              "propertyOrder": 7
+              "propertyOrder": 9
             }
           },
           "title": "Measurement after sintering"
