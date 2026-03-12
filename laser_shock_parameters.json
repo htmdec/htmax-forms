@@ -5,156 +5,267 @@
     "type": "object",
     "properties": {
         "Timestamp": {
-            "type": "string",
+            "type": [
+                "string",
+                "null"
+            ],
             "format": "date-time",
             "title": "Timestamp",
             "propertyOrder": 1
         },
         "Exp_ID": {
-            "type": "integer",
+            "type": [
+                "number",
+                "null"
+            ],
             "title": "Exp_ID",
             "propertyOrder": 2
         },
-        "Flyer_ID": {
-            "type": "string",
-            "title": "Flyer_ID",
+        "Exp_type": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "title": "Exp_type",
             "propertyOrder": 3
         },
-        "Flyer_material": {
-            "type": "string",
-            "title": "Flyer_material",
+        "Flyer_ID": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "title": "Flyer_ID",
             "propertyOrder": 4
         },
-        "Flyer_Thickness_um": {
-            "type": "integer",
-            "title": "Flyer_Thickness (um)",
+        "Flyer_material": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "title": "Flyer_material",
             "propertyOrder": 5
         },
-        "Sample_ID": {
-            "type": "string",
-            "title": "Sample_ID",
+        "Flyer_Thickness_um": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "title": "Flyer_Thickness (um)",
+            "propertyOrder": 6
+        },
+        "sample_IGSN": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "title": "sample_IGSN",
             "description": "Lookup for the IGSN of the sample",
             "format": "autocomplete",
             "options": {
-              "autocomplete": {
-                "search": "search_deposition",
-                "renderResult": "render_deposition",
-                "getResultValue": "get_deposition_value",
-                "autoSelect": true,
-                "debounceTime": 500
-              }
+                "autocomplete": {
+                    "search": "search_deposition",
+                    "renderResult": "render_deposition",
+                    "getResultValue": "get_deposition_value",
+                    "autoSelect": true,
+                    "debounceTime": 500
+                }
             },
-            "propertyOrder": 6
-        },
-        "Sample_material": {
-            "type": "string",
-            "title": "Sample material",
             "propertyOrder": 7
         },
-        "Spacing_um": {
-            "type": "integer",
-            "title": "Spacing (um)",
+        "Sample_material": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "title": "Sample material",
             "propertyOrder": 8
         },
-        "Waveplate_Angle_Degrees": {
-            "type": "integer",
-            "title": "Waveplate_Angle (Degrees)",
+        "Spacing_um": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "title": "Spacing (um)",
             "propertyOrder": 9
         },
-        "PDV_FileName": {
-            "type": "string",
-            "title": "PDV_FileName",
-            "pattern": "^[^\\s]+$",
+        "Waveplate_Angle_Degrees": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "title": "Waveplate_Angle (Degrees)",
             "propertyOrder": 10
         },
-        "PDV_Target_Wavelength_m": {
-            "type": "number",
-            "title": "PDV_Target_Wavelength (m)",
+        "PDV_FileName": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "title": "PDV_FileName",
+            "pattern": "^[^\\s]+$",
             "propertyOrder": 11
         },
-        "PDV_Target_Power_dBm": {
-            "type": "number",
-            "title": "PDV_Target_Power (dBm)",
+        "PDV_Target_Wavelength_m": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "title": "PDV_Target_Wavelength (m)",
             "propertyOrder": 12
         },
-        "PDV_Ref_Wavelength_m": {
-            "type": "number",
-            "title": "PDV_Ref_Wavelength (m)",
+        "PDV_Target_Power_dBm": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "title": "PDV_Target_Power (dBm)",
             "propertyOrder": 13
         },
-        "PDV_Ref_Power_dBm": {
-            "type": "number",
-            "title": "PDV_Ref_Power (dBm)",
+        "PDV_Ref_Wavelength_m": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "title": "PDV_Ref_Wavelength (m)",
             "propertyOrder": 14
         },
-        "PDV_Return_Power_dBm": {
-            "type": "number",
-            "title": "PDV_Return_Power (dBm)",
+        "PDV_Ref_Power_dBm": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "title": "PDV_Ref_Power (dBm)",
             "propertyOrder": 15
         },
-        "Flyer_Row": {
-            "type": "integer",
-            "title": "Flyer_Row",
+        "PDV_Return_Power_dBm": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "title": "PDV_Return_Power (dBm)",
             "propertyOrder": 16
         },
-        "Flyer_Column": {
-            "type": "integer",
-            "title": "Flyer_Column",
+        "Flyer_Row": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "title": "Flyer_Row",
             "propertyOrder": 17
         },
-        "Flyer_X_Position_Desired_mm": {
-            "type": "number",
-            "title": "Flyer_X_Position_Desired (mm)",
+        "Flyer_Column": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "title": "Flyer_Column",
             "propertyOrder": 18
         },
-        "Flyer_Y_Position_Desired_mm": {
-            "type": "number",
-            "title": "Flyer_Y_Position_Desired (mm)",
+        "Flyer_X_Position_Desired_mm": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "title": "Flyer_X_Position_Desired (mm)",
             "propertyOrder": 19
         },
-        "Flyer_X_Position_Corrected_mm": {
-            "type": "number",
-            "title": "Flyer_X_Position_Corrected (mm)",
+        "Flyer_Y_Position_Desired_mm": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "title": "Flyer_Y_Position_Desired (mm)",
             "propertyOrder": 20
         },
-        "Flyer_Y_Position_Corrected_mm": {
-            "type": "number",
-            "title": "Flyer_Y_Position_Corrected (mm)",
+        "Flyer_X_Position_Final_mm": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "title": "Flyer_X_Position_Final (mm)",
             "propertyOrder": 21
         },
-        "Laser_Ref_Energy_mJ": {
-            "type": "number",
-            "title": "Laser_Ref_Energy (mJ)",
+        "Flyer_Y_Position_Final_mm": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "title": "Flyer_Y_Position_Final (mm)",
             "propertyOrder": 22
         },
-        "Laser_Target_Energy_mJ": {
-            "type": "number",
-            "title": "Laser_Target_Energy (mJ)",
+        "Laser_Ref_Energy_mJ": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "title": "Laser_Ref_Energy (mJ)",
             "propertyOrder": 23
         },
-        "Beam_Profile_FileName": {
-            "type": "string",
-            "title": "Beam_Profile_FileName",
+        "Laser_Target_Energy_mJ": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "title": "Laser_Target_Energy (mJ)",
             "propertyOrder": 24
         },
-        "Shot_Time_seconds": {
-            "type": "number",
-            "title": "Shot_Time (seconds)",
+        "Beam_Profile_FileName": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "title": "Beam_Profile_FileName",
             "propertyOrder": 25
         },
-        "Notes": {
-            "type": "string",
-            "title": "Notes",
+        "Shot_Time_seconds": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "title": "Shot_Time (seconds)",
             "propertyOrder": 26
+        },
+        "Notes": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "title": "Notes",
+            "propertyOrder": 27
+        },
+        "Performed_by": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "title": "Performed_by",
+            "propertyOrder": 28
+        },
+        "Grant": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "title": "Grant",
+            "propertyOrder": 29
+        },
+        "Location": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "title": "Location",
+            "propertyOrder": 30
         }
     },
     "required": [
         "Timestamp",
         "Exp_ID",
+        "Exp_type",
         "Flyer_ID",
         "Flyer_material",
         "Flyer_Thickness_um",
-        "Sample_ID",
+        "sample_IGSN",
         "Sample_material",
         "Spacing_um",
         "Waveplate_Angle_Degrees",
@@ -168,13 +279,16 @@
         "Flyer_Column",
         "Flyer_X_Position_Desired_mm",
         "Flyer_Y_Position_Desired_mm",
-        "Flyer_X_Position_Corrected_mm",
-        "Flyer_Y_Position_Corrected_mm",
+        "Flyer_X_Position_Final_mm",
+        "Flyer_Y_Position_Final_mm",
         "Laser_Ref_Energy_mJ",
         "Laser_Target_Energy_mJ",
         "Beam_Profile_FileName",
         "Shot_Time_seconds",
-        "Notes"
+        "Notes",
+        "Performed_by",
+        "Grant",
+        "Location"
     ],
-    "additionalProperties": false
+    "additionalProperties": true
 }
