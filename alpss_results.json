@@ -3,18 +3,18 @@
     "title": "ALPSS Result Schema",
     "type": "object",
     "properties": {
+        "file_name": {
+            "type": "string",
+            "propertyOrder": 1,
+            "title": "File Name"
+        },
         "velocity_ok": {
             "type": [
                 "boolean",
                 "null"
             ],
-            "propertyOrder": 1,
-            "title": "Velocity OK"
-        },
-        "file_name": {
-            "type": "string",
             "propertyOrder": 2,
-            "title": "File Name"
+            "title": "Velocity OK"
         },
         "Sample_IGSN": {
             "type": [
