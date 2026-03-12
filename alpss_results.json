@@ -308,7 +308,7 @@
         "velocity_ok",
         "spall_ok",
         "uncertainty_ok",
-        "error_msg",
+        "error_message",
         "file_name",
         "run_time",
         "velocity_at_max_compression",
