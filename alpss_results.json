@@ -175,6 +175,70 @@
             "type": "string",
             "propertyOrder": 21,
             "title": "Version"
+        },
+        "hel_detected": {
+            "type": [
+                "boolean",
+                "null"
+            ],
+            "propertyOrder": 22,
+            "title": "HEL Detected"
+        },
+        "hel_strength_(gpa)": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "propertyOrder": 23,
+            "title": "HEL Strength (GPa)"
+        },
+        "hel_uncertainty_(gpa)": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "propertyOrder": 24,
+            "title": "HEL Uncertainty (GPa)"
+        },
+        "hel_free_surface_velocity_(m/s)": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "propertyOrder": 25,
+            "title": "HEL Free Surface Velocity (m/s)"
+        },
+        "hel_time_detection_(ns)": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "propertyOrder": 26,
+            "title": "HEL Time Detection (ns)"
+        },
+        "hel_consecutive_points": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "propertyOrder": 27,
+            "title": "HEL Consecutive Points"
+        },
+        "hel_segment_duration_(ns)": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "propertyOrder": 28,
+            "title": "HEL Segment Duration (ns)"
+        },
+        "hel_strain_rate": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "propertyOrder": 29,
+            "title": "HEL Strain Rate"
         }
     },
     "required": [
