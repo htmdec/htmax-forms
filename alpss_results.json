@@ -17,6 +17,24 @@
             "propertyOrder": 2,
             "title": "Velocity OK"
         },
+        "spall_ok": {
+            "type": [
+                "boolean",
+                "null"
+            ],
+            "default": null,
+            "propertyOrder": 3,
+            "title": "Spall OK"
+        },
+        "uncertainty_ok": {
+            "type": [
+                "boolean",
+                "null"
+            ],
+            "default": null,
+            "propertyOrder": 4,
+            "title": "Uncertainty OK"
+        },
         "Sample_IGSN": {
             "type": [
                 "string",
@@ -34,7 +52,7 @@
                     "debounceTime": 500
                 }
             },
-            "propertyOrder": 3,
+            "propertyOrder": 5,
             "title": "Sample_IGSN"
         },
         "run_time": {
@@ -43,7 +61,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 4,
+            "propertyOrder": 6,
             "title": "Run Time"
         },
         "velocity_at_max_compression": {
@@ -52,7 +70,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 5,
+            "propertyOrder": 7,
             "title": "Velocity at Max Compression"
         },
         "time_at_max_compression": {
@@ -61,7 +79,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 6,
+            "propertyOrder": 8,
             "title": "Time at Max Compression"
         },
         "velocity_at_max_tension": {
@@ -70,7 +88,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 7,
+            "propertyOrder": 9,
             "title": "Velocity at Max Tension"
         },
         "time_at_max_tension": {
@@ -79,7 +97,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 8,
+            "propertyOrder": 10,
             "title": "Time at Max Tension"
         },
         "velocity_at_recompression": {
@@ -88,7 +106,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 9,
+            "propertyOrder": 11,
             "title": "Velocity at Recompression"
         },
         "time_at_recompression": {
@@ -97,7 +115,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 10,
+            "propertyOrder": 12,
             "title": "Time at Recompression"
         },
         "carrier_frequency": {
@@ -106,7 +124,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 11,
+            "propertyOrder": 13,
             "title": "Carrier Frequency"
         },
         "spall_strength": {
@@ -115,7 +133,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 12,
+            "propertyOrder": 14,
             "title": "Spall Strength"
         },
         "spall_strength_uncertainty": {
@@ -124,7 +142,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 13,
+            "propertyOrder": 15,
             "title": "Spall Strength Uncertainty"
         },
         "strain_rate": {
@@ -133,7 +151,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 14,
+            "propertyOrder": 16,
             "title": "Strain Rate"
         },
         "strain_rate_uncertainty": {
@@ -142,7 +160,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 15,
+            "propertyOrder": 17,
             "title": "Strain Rate Uncertainty"
         },
         "peak_shock_stress": {
@@ -151,7 +169,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 16,
+            "propertyOrder": 18,
             "title": "Peak Shock Stress"
         },
         "spect_time_res": {
@@ -160,7 +178,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 17,
+            "propertyOrder": 19,
             "title": "Spect Time Res"
         },
         "spect_freq_res": {
@@ -169,7 +187,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 18,
+            "propertyOrder": 20,
             "title": "Spect Freq Res"
         },
         "spect_velocity_res": {
@@ -178,7 +196,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 19,
+            "propertyOrder": 21,
             "title": "Spect Velocity Res"
         },
         "signal_start_time": {
@@ -187,7 +205,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 20,
+            "propertyOrder": 22,
             "title": "Signal Start Time"
         },
         "smoothing_characteristic_time": {
@@ -196,12 +214,12 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 21,
+            "propertyOrder": 23,
             "title": "Smoothing Characteristic Time"
         },
         "version": {
             "type": "string",
-            "propertyOrder": 22,
+            "propertyOrder": 24,
             "title": "Version"
         },
         "hel_detected": {
@@ -210,7 +228,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 23,
+            "propertyOrder": 25,
             "title": "HEL Detected"
         },
         "hel_strength_(gpa)": {
@@ -219,7 +237,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 24,
+            "propertyOrder": 26,
             "title": "HEL Strength (GPa)"
         },
         "hel_uncertainty_(gpa)": {
@@ -228,7 +246,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 25,
+            "propertyOrder": 27,
             "title": "HEL Uncertainty (GPa)"
         },
         "hel_free_surface_velocity_(m/s)": {
@@ -237,7 +255,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 26,
+            "propertyOrder": 28,
             "title": "HEL Free Surface Velocity (m/s)"
         },
         "hel_time_detection_(ns)": {
@@ -246,7 +264,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 27,
+            "propertyOrder": 29,
             "title": "HEL Time Detection (ns)"
         },
         "hel_consecutive_points": {
@@ -255,7 +273,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 28,
+            "propertyOrder": 30,
             "title": "HEL Consecutive Points"
         },
         "hel_segment_duration_(ns)": {
@@ -264,7 +282,7 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 29,
+            "propertyOrder": 31,
             "title": "HEL Segment Duration (ns)"
         },
         "hel_strain_rate": {
@@ -273,12 +291,14 @@
                 "null"
             ],
             "default": null,
-            "propertyOrder": 30,
+            "propertyOrder": 32,
             "title": "HEL Strain Rate"
         }
     },
     "required": [
         "velocity_ok",
+        "spall_ok",
+        "uncertainty_ok",
         "file_name",
         "run_time",
         "velocity_at_max_compression",
