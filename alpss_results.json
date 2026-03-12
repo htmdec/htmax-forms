@@ -13,6 +13,7 @@
                 "boolean",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 2,
             "title": "Velocity OK"
         },
@@ -21,6 +22,7 @@
                 "string",
                 "null"
             ],
+            "default": null,
             "description": "Lookup for the IGSN of the sample",
             "format": "autocomplete",
             "options": {
@@ -40,6 +42,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 4,
             "title": "Run Time"
         },
@@ -48,6 +51,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 5,
             "title": "Velocity at Max Compression"
         },
@@ -56,6 +60,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 6,
             "title": "Time at Max Compression"
         },
@@ -64,6 +69,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 7,
             "title": "Velocity at Max Tension"
         },
@@ -72,6 +78,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 8,
             "title": "Time at Max Tension"
         },
@@ -80,6 +87,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 9,
             "title": "Velocity at Recompression"
         },
@@ -88,6 +96,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 10,
             "title": "Time at Recompression"
         },
@@ -96,6 +105,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 11,
             "title": "Carrier Frequency"
         },
@@ -104,6 +114,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 12,
             "title": "Spall Strength"
         },
@@ -112,6 +123,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 13,
             "title": "Spall Strength Uncertainty"
         },
@@ -120,6 +132,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 14,
             "title": "Strain Rate"
         },
@@ -128,6 +141,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 15,
             "title": "Strain Rate Uncertainty"
         },
@@ -136,6 +150,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 16,
             "title": "Peak Shock Stress"
         },
@@ -144,6 +159,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 17,
             "title": "Spect Time Res"
         },
@@ -152,6 +168,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 18,
             "title": "Spect Freq Res"
         },
@@ -160,6 +177,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 19,
             "title": "Spect Velocity Res"
         },
@@ -168,6 +186,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 20,
             "title": "Signal Start Time"
         },
@@ -176,6 +195,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 21,
             "title": "Smoothing Characteristic Time"
         },
@@ -189,6 +209,7 @@
                 "boolean",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 23,
             "title": "HEL Detected"
         },
@@ -197,6 +218,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 24,
             "title": "HEL Strength (GPa)"
         },
@@ -205,6 +227,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 25,
             "title": "HEL Uncertainty (GPa)"
         },
@@ -213,6 +236,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 26,
             "title": "HEL Free Surface Velocity (m/s)"
         },
@@ -221,6 +245,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 27,
             "title": "HEL Time Detection (ns)"
         },
@@ -229,6 +254,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 28,
             "title": "HEL Consecutive Points"
         },
@@ -237,6 +263,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 29,
             "title": "HEL Segment Duration (ns)"
         },
@@ -245,6 +272,7 @@
                 "number",
                 "null"
             ],
+            "default": null,
             "propertyOrder": 30,
             "title": "HEL Strain Rate"
         }
