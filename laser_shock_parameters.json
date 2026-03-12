@@ -53,12 +53,12 @@
             "title": "Flyer_Thickness (um)",
             "propertyOrder": 6
         },
-        "Sample_ID": {
+        "sample_IGSN": {
             "type": [
                 "string",
                 "null"
             ],
-            "title": "Sample_ID",
+            "title": "sample_IGSN",
             "description": "Lookup for the IGSN of the sample",
             "format": "autocomplete",
             "options": {
@@ -265,7 +265,7 @@
         "Flyer_ID",
         "Flyer_material",
         "Flyer_Thickness_um",
-        "Sample_ID",
+        "sample_IGSN",
         "Sample_material",
         "Spacing_um",
         "Waveplate_Angle_Degrees",
