@@ -164,6 +164,56 @@
         }
       }
     },
+    "fileUpload": {
+      "title": "File",
+      "type": "object",
+      "format": "grid",
+      "properties": {
+        "file": {
+          "title": "Uploaded File ID",
+          "type": "string",
+          "propertyOrder": 1,
+          "links": [
+            {
+              "rel": "View",
+              "title": "View",
+              "href": "/api/v1/file/{{self}}/download?contentDisposition=inline",
+              "class": "girder-file-link"
+            },
+            {
+              "rel": "Download",
+              "title": "Download",
+              "href": "/api/v1/file/{{self}}/download",
+              "download": true,
+              "class": "girder-file-link"
+            }
+          ]
+        },
+        "button": {
+          "title": "Click to Upload",
+          "format": "button",
+          "options": {
+            "button": {
+              "action": "button1CB",
+              "uploadFor": "file"
+            }
+          },
+          "propertyOrder": 2
+        },
+        "targetPath": {
+          "type": "string",
+          "title": "Target Path",
+          "watch": {
+            "path": "root.sheetID"
+          },
+          "template": "{{path}}",
+          "options": {
+            "hidden": true
+          },
+          "propertyOrder": 3
+        }
+      }
+    },
     "igsn": {
       "id": "igsn",
       "type": "object",
@@ -335,6 +385,18 @@
       "title": "ORCID ID",
       "type": "string",
       "propertyOrder": 9
+    },
+    "machiningParameters": {
+      "title": "Machining Parameters",
+      "description": "Upload machining parameter file (e.g. EDM Wire or other technique)",
+      "$ref": "#/definitions/fileUpload",
+      "propertyOrder": 11
+    },
+    "specSheet": {
+      "title": "Spec Sheet",
+      "description": "Upload the material spec sheet (PDF)",
+      "$ref": "#/definitions/fileUpload",
+      "propertyOrder": 12
     },
     "dimensions": {
       "title": "Dimensions (mm)",
