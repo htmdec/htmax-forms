@@ -117,6 +117,10 @@
         "title": {
           "type": "string",
           "title": "Sample Name",
+          "template": "{{sheetId}}",
+          "watch": {
+            "sheetId": "root.sheetID"
+          },
           "readOnly": true,
           "propertyOrder": 5,
           "options": {
@@ -274,6 +278,95 @@
       "options": {
         "hidden": true
       }
+    },
+    "sheetID": {
+      "title": "Sheet ID",
+      "description": "Automatically generated local identifier for the sheet",
+      "type": "string",
+      "template": "Sheet_{{projId}}_{{replaceAll date '-' ''}}_{{alloy}}_{{uniqueNum}}",
+      "watch": {
+        "projId": "root.projectIdentifier",
+        "date": "root.date",
+        "alloy": "root.alloy",
+        "uniqueNum": "root.uniqueNumber"
+      },
+      "readOnly": true,
+      "propertyOrder": 1
+    },
+    "projectIdentifier": {
+      "title": "Project Identifier",
+      "type": "string",
+      "propertyOrder": 2
+    },
+    "date": {
+      "title": "Date",
+      "type": "string",
+      "format": "date",
+      "description": "Date in YYYY-MM-DD format",
+      "propertyOrder": 3
+    },
+    "alloy": {
+      "title": "Alloy",
+      "type": "string",
+      "propertyOrder": 4
+    },
+    "uniqueNumber": {
+      "title": "Unique Number",
+      "type": "string",
+      "propertyOrder": 5
+    },
+    "manufacturer": {
+      "title": "Manufacturer",
+      "type": "string",
+      "propertyOrder": 6
+    },
+    "supplyCompany": {
+      "title": "Supply Company",
+      "type": "string",
+      "propertyOrder": 7
+    },
+    "description": {
+      "title": "Description",
+      "type": "string",
+      "format": "textarea",
+      "propertyOrder": 8
+    },
+    "orcidID": {
+      "title": "ORCID ID",
+      "type": "string",
+      "propertyOrder": 9
+    },
+    "dimensions": {
+      "title": "Dimensions (mm)",
+      "type": "object",
+      "format": "grid",
+      "properties": {
+        "length": {
+          "title": "Length",
+          "type": "number",
+          "propertyOrder": 0,
+          "options": {
+            "grid_columns": 4
+          }
+        },
+        "width": {
+          "title": "Width",
+          "type": "number",
+          "propertyOrder": 1,
+          "options": {
+            "grid_columns": 4
+          }
+        },
+        "thickness": {
+          "title": "Thickness",
+          "type": "number",
+          "propertyOrder": 2,
+          "options": {
+            "grid_columns": 4
+          }
+        }
+      },
+      "propertyOrder": 10
     }
   },
   "if": {
