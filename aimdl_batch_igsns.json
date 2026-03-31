@@ -436,7 +436,6 @@
       "title": "Number of Samples",
       "description": "How many samples to cut from this sheet. One IGSN will be minted per sample (suffixed -1, -2, ...).",
       "type": "integer",
-      "minimum": 1,
       "propertyOrder": 14,
       "options": {
         "dependencies": {
@@ -493,8 +492,7 @@
     "projectIdentifier",
     "date",
     "alloy",
-    "uniqueNumber",
-    "sampleCount"
+    "uniqueNumber"
   ],
   "if": {
     "properties": {
