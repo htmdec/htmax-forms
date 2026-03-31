@@ -394,18 +394,21 @@
         "length": {
           "title": "Length",
           "type": "number",
+          "exclusiveMinimum": 0,
           "propertyOrder": 0,
           "options": { "grid_columns": 4 }
         },
         "width": {
           "title": "Width",
           "type": "number",
+          "exclusiveMinimum": 0,
           "propertyOrder": 1,
           "options": { "grid_columns": 4 }
         },
         "thickness": {
           "title": "Thickness",
           "type": "number",
+          "exclusiveMinimum": 0,
           "propertyOrder": 2,
           "options": { "grid_columns": 4 }
         }
@@ -464,18 +467,21 @@
         "length": {
           "title": "Length",
           "type": "number",
+          "exclusiveMinimum": 0,
           "propertyOrder": 0,
           "options": { "grid_columns": 4 }
         },
         "width": {
           "title": "Width",
           "type": "number",
+          "exclusiveMinimum": 0,
           "propertyOrder": 1,
           "options": { "grid_columns": 4 }
         },
         "thickness": {
           "title": "Thickness",
           "type": "number",
+          "exclusiveMinimum": 0,
           "propertyOrder": 2,
           "options": { "grid_columns": 4 }
         }
