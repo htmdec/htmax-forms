@@ -341,76 +341,110 @@
         "uniqueNum": "root.uniqueNumber"
       },
       "readOnly": true,
-      "propertyOrder": 2
+      "propertyOrder": 1
     },
     "projectIdentifier": {
       "title": "Project Identifier",
       "type": "string",
-      "propertyOrder": 3
+      "propertyOrder": 2
     },
     "date": {
       "title": "Date",
       "type": "string",
       "format": "date",
       "description": "Date in YYYY-MM-DD format",
-      "propertyOrder": 4
+      "propertyOrder": 3
     },
     "alloy": {
       "title": "Alloy",
       "type": "string",
-      "propertyOrder": 5
+      "propertyOrder": 4
     },
     "uniqueNumber": {
       "title": "Unique Number",
       "type": "string",
-      "propertyOrder": 6
+      "propertyOrder": 5
     },
     "manufacturer": {
       "title": "Manufacturer",
       "type": "string",
-      "propertyOrder": 7
+      "propertyOrder": 6
     },
     "supplyCompany": {
       "title": "Supply Company",
       "type": "string",
-      "propertyOrder": 8
+      "propertyOrder": 7
     },
     "description": {
       "title": "Description",
       "type": "string",
       "format": "textarea",
-      "propertyOrder": 9
+      "propertyOrder": 8
     },
     "orcidID": {
       "title": "ORCID ID",
       "type": "string",
+      "propertyOrder": 9
+    },
+    "dimensions": {
+      "title": "Sheet Dimensions (mm)",
+      "type": "object",
+      "format": "grid",
+      "properties": {
+        "length": {
+          "title": "Length",
+          "type": "number",
+          "propertyOrder": 0,
+          "options": { "grid_columns": 4 }
+        },
+        "width": {
+          "title": "Width",
+          "type": "number",
+          "propertyOrder": 1,
+          "options": { "grid_columns": 4 }
+        },
+        "thickness": {
+          "title": "Thickness",
+          "type": "number",
+          "propertyOrder": 2,
+          "options": { "grid_columns": 4 }
+        }
+      },
       "propertyOrder": 10
     },
     "machiningParameters": {
       "title": "Machining Parameters",
       "description": "Upload machining parameter file (e.g. EDM Wire or other technique)",
       "$ref": "#/definitions/fileUpload",
-      "propertyOrder": 13
+      "propertyOrder": 11
     },
     "specSheet": {
       "title": "Spec Sheet",
       "description": "Upload the material spec sheet (PDF)",
       "$ref": "#/definitions/fileUpload",
-      "propertyOrder": 14
+      "propertyOrder": 12
+    },
+    "createSampleIGSNs": {
+      "title": "Create Sample IGSNs",
+      "description": "Check to mint IGSNs for the cut samples from this sheet.",
+      "type": "boolean",
+      "format": "checkbox",
+      "default": true,
+      "propertyOrder": 13
     },
     "sampleCount": {
       "title": "Number of Samples",
       "description": "How many samples to cut from this sheet. One IGSN will be minted per sample (suffixed -1, -2, ...).",
       "type": "integer",
       "minimum": 1,
-      "propertyOrder": 15
+      "propertyOrder": 14
     },
     "sampleDescription": {
       "title": "Sample Description",
       "description": "Description applied uniformly to all cut samples from this sheet.",
       "type": "string",
       "format": "textarea",
-      "propertyOrder": 16
+      "propertyOrder": 15
     },
     "sampleDimensions": {
       "title": "Sample Dimensions (mm)",
@@ -422,87 +456,62 @@
           "title": "Length",
           "type": "number",
           "propertyOrder": 0,
-          "options": {
-            "grid_columns": 4
-          }
+          "options": { "grid_columns": 4 }
         },
         "width": {
           "title": "Width",
           "type": "number",
           "propertyOrder": 1,
-          "options": {
-            "grid_columns": 4
-          }
+          "options": { "grid_columns": 4 }
         },
         "thickness": {
           "title": "Thickness",
           "type": "number",
           "propertyOrder": 2,
-          "options": {
-            "grid_columns": 4
-          }
+          "options": { "grid_columns": 4 }
         }
       },
-      "propertyOrder": 17
-    },
-    "dimensions": {
-      "title": "Sheet Dimensions (mm)",
-      "type": "object",
-      "format": "grid",
-      "properties": {
-        "length": {
-          "title": "Length",
-          "type": "number",
-          "propertyOrder": 0,
-          "options": {
-            "grid_columns": 4
-          }
-        },
-        "width": {
-          "title": "Width",
-          "type": "number",
-          "propertyOrder": 1,
-          "options": {
-            "grid_columns": 4
-          }
-        },
-        "thickness": {
-          "title": "Thickness",
-          "type": "number",
-          "propertyOrder": 2,
-          "options": {
-            "grid_columns": 4
-          }
-        }
-      },
-      "propertyOrder": 11
+      "propertyOrder": 16
     }
   },
-  "if": {
-    "properties": {
-      "igsn": {
+  "required": [
+    "projectIdentifier",
+    "date",
+    "alloy",
+    "uniqueNumber",
+    "sampleCount"
+  ],
+  "allOf": [
+    {
+      "if": {
         "properties": {
-          "request": {
-            "const": false
+          "igsn": {
+            "properties": {
+              "request": { "const": false }
+            }
           }
+        }
+      },
+      "then": {
+        "properties": {
+          "igsnMeta": { "options": { "hidden": true }, "readonly": true },
+          "assignedIGSN": { "options": { "hidden": false }, "readonly": true }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "createSampleIGSNs": { "const": false }
+        }
+      },
+      "then": {
+        "properties": {
+          "sampleCount": { "options": { "hidden": true } },
+          "sampleDescription": { "options": { "hidden": true } },
+          "sampleDimensions": { "options": { "hidden": true } }
         }
       }
     }
-  },
-  "then": {
-    "properties": {
-      "igsnMeta": {
-        "options": {
-          "hidden": true
-        },
-        "readonly": true
-      },
-      "assignedIGSN": {
-        "options": {
-          "hidden": false
-        },
-        "readonly": true
-      }
-    }
-  }
+  ]
 }
