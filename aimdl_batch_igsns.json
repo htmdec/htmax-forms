@@ -341,65 +341,80 @@
         "uniqueNum": "root.uniqueNumber"
       },
       "readOnly": true,
-      "propertyOrder": 1
+      "propertyOrder": 2
     },
     "projectIdentifier": {
       "title": "Project Identifier",
       "type": "string",
-      "propertyOrder": 2
+      "propertyOrder": 3
     },
     "date": {
       "title": "Date",
       "type": "string",
       "format": "date",
       "description": "Date in YYYY-MM-DD format",
-      "propertyOrder": 3
+      "propertyOrder": 4
     },
     "alloy": {
       "title": "Alloy",
       "type": "string",
-      "propertyOrder": 4
+      "propertyOrder": 5
     },
     "uniqueNumber": {
       "title": "Unique Number",
       "type": "string",
-      "propertyOrder": 5
+      "propertyOrder": 6
     },
     "manufacturer": {
       "title": "Manufacturer",
       "type": "string",
-      "propertyOrder": 6
+      "propertyOrder": 7
     },
     "supplyCompany": {
       "title": "Supply Company",
       "type": "string",
-      "propertyOrder": 7
+      "propertyOrder": 8
     },
     "description": {
       "title": "Description",
       "type": "string",
       "format": "textarea",
-      "propertyOrder": 8
+      "propertyOrder": 9
     },
     "orcidID": {
       "title": "ORCID ID",
       "type": "string",
-      "propertyOrder": 9
+      "propertyOrder": 10
     },
     "machiningParameters": {
       "title": "Machining Parameters",
       "description": "Upload machining parameter file (e.g. EDM Wire or other technique)",
       "$ref": "#/definitions/fileUpload",
-      "propertyOrder": 11
+      "propertyOrder": 13
     },
     "specSheet": {
       "title": "Spec Sheet",
       "description": "Upload the material spec sheet (PDF)",
       "$ref": "#/definitions/fileUpload",
-      "propertyOrder": 12
+      "propertyOrder": 14
     },
-    "dimensions": {
-      "title": "Dimensions (mm)",
+    "sampleCount": {
+      "title": "Number of Samples",
+      "description": "How many samples to cut from this sheet. One IGSN will be minted per sample (suffixed -1, -2, ...).",
+      "type": "integer",
+      "minimum": 1,
+      "propertyOrder": 15
+    },
+    "sampleDescription": {
+      "title": "Sample Description",
+      "description": "Description applied uniformly to all cut samples from this sheet.",
+      "type": "string",
+      "format": "textarea",
+      "propertyOrder": 16
+    },
+    "sampleDimensions": {
+      "title": "Sample Dimensions (mm)",
+      "description": "Dimensions of individual cut samples (may differ from sheet dimensions).",
       "type": "object",
       "format": "grid",
       "properties": {
@@ -428,7 +443,39 @@
           }
         }
       },
-      "propertyOrder": 10
+      "propertyOrder": 17
+    },
+    "dimensions": {
+      "title": "Sheet Dimensions (mm)",
+      "type": "object",
+      "format": "grid",
+      "properties": {
+        "length": {
+          "title": "Length",
+          "type": "number",
+          "propertyOrder": 0,
+          "options": {
+            "grid_columns": 4
+          }
+        },
+        "width": {
+          "title": "Width",
+          "type": "number",
+          "propertyOrder": 1,
+          "options": {
+            "grid_columns": 4
+          }
+        },
+        "thickness": {
+          "title": "Thickness",
+          "type": "number",
+          "propertyOrder": 2,
+          "options": {
+            "grid_columns": 4
+          }
+        }
+      },
+      "propertyOrder": 11
     }
   },
   "if": {
