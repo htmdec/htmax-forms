@@ -361,24 +361,31 @@
         "hidden": true
       }
     },
+    "_existingSheetLocalId": {
+      "type": "string",
+      "propertyOrder": 0,
+      "template": "{{split existing ' - ' 2}}",
+      "watch": {
+        "existing": "root.existingSheetIGSN"
+      },
+      "options": {
+        "hidden": true
+      }
+    },
     "sheetID": {
       "title": "Sheet ID",
       "description": "Automatically generated local identifier for the sheet",
       "type": "string",
-      "template": "Sheet_{{projId}}_{{replaceAll date '-' ''}}_{{alloy}}_{{uniqueNum}}",
+      "template": "{{#if existingLocalId}}{{existingLocalId}}{{else}}Sheet_{{projId}}_{{replaceAll date '-' ''}}_{{alloy}}_{{uniqueNum}}{{/if}}",
       "watch": {
+        "existingLocalId": "root._existingSheetLocalId",
         "projId": "root.projectIdentifier",
         "date": "root.date",
         "alloy": "root.alloy",
         "uniqueNum": "root.uniqueNumber"
       },
       "readOnly": true,
-      "propertyOrder": 1,
-      "options": {
-        "dependencies": {
-          "sheetIGSNMode": "create"
-        }
-      }
+      "propertyOrder": 1
     },
     "projectIdentifier": {
       "title": "Project Identifier",
