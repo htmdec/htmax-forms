@@ -28,9 +28,9 @@
           "type": "string",
           "description": "Originating Institution",
           "enum": [
-            "JHU"
+            "JH"
           ],
-          "default": "JHU",
+          "default": "JH",
           "propertyOrder": 1,
           "options": {
             "titleHidden": true,
@@ -305,11 +305,17 @@
     "sheetIGSNMode": {
       "title": "Sheet IGSN",
       "type": "string",
-      "enum": ["create", "existing"],
+      "enum": [
+        "create",
+        "existing"
+      ],
       "default": "create",
       "propertyOrder": -2,
       "options": {
-        "enum_titles": ["Create new IGSN", "Use existing IGSN"]
+        "enum_titles": [
+          "Create new IGSN",
+          "Use existing IGSN"
+        ]
       }
     },
     "existingSheetIGSN": {
@@ -480,21 +486,27 @@
           "type": "number",
           "exclusiveMinimum": 0,
           "propertyOrder": 0,
-          "options": { "grid_columns": 4 }
+          "options": {
+            "grid_columns": 4
+          }
         },
         "width": {
           "title": "Width",
           "type": "number",
           "exclusiveMinimum": 0,
           "propertyOrder": 1,
-          "options": { "grid_columns": 4 }
+          "options": {
+            "grid_columns": 4
+          }
         },
         "thickness": {
           "title": "Thickness",
           "type": "number",
           "exclusiveMinimum": 0,
           "propertyOrder": 2,
-          "options": { "grid_columns": 4 }
+          "options": {
+            "grid_columns": 4
+          }
         }
       },
       "propertyOrder": 10,
@@ -580,21 +592,27 @@
           "type": "number",
           "exclusiveMinimum": 0,
           "propertyOrder": 0,
-          "options": { "grid_columns": 4 }
+          "options": {
+            "grid_columns": 4
+          }
         },
         "width": {
           "title": "Width",
           "type": "number",
           "exclusiveMinimum": 0,
           "propertyOrder": 1,
-          "options": { "grid_columns": 4 }
+          "options": {
+            "grid_columns": 4
+          }
         },
         "thickness": {
           "title": "Thickness",
           "type": "number",
           "exclusiveMinimum": 0,
           "propertyOrder": 2,
-          "options": { "grid_columns": 4 }
+          "options": {
+            "grid_columns": 4
+          }
         }
       },
       "propertyOrder": 17,
@@ -608,10 +626,19 @@
   "allOf": [
     {
       "if": {
-        "properties": { "sheetIGSNMode": { "const": "create" } }
+        "properties": {
+          "sheetIGSNMode": {
+            "const": "create"
+          }
+        }
       },
       "then": {
-        "required": ["projectIdentifier", "date", "alloy", "uniqueNumber"]
+        "required": [
+          "projectIdentifier",
+          "date",
+          "alloy",
+          "uniqueNumber"
+        ]
       }
     },
     {
@@ -619,15 +646,27 @@
         "properties": {
           "igsn": {
             "properties": {
-              "request": { "const": false }
+              "request": {
+                "const": false
+              }
             }
           }
         }
       },
       "then": {
         "properties": {
-          "igsnMeta": { "options": { "hidden": true }, "readonly": true },
-          "assignedIGSN": { "options": { "hidden": false }, "readonly": true }
+          "igsnMeta": {
+            "options": {
+              "hidden": true
+            },
+            "readonly": true
+          },
+          "assignedIGSN": {
+            "options": {
+              "hidden": false
+            },
+            "readonly": true
+          }
         }
       }
     }
