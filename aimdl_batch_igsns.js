@@ -17,6 +17,17 @@ window.JSONEditor.defaults.callbacks.autocomplete = {
             url: 'deposition',
             method: 'GET',
             data: { q: input, limit: 10 }
+        }).then(function (results) {
+            return results.filter(function (result) {
+                try {
+                    const localId = result.metadata.alternateIdentifiers.find(
+                        (id) => id.alternateIdentifierType.toLowerCase() === 'local'
+                    );
+                    return localId && localId.alternateIdentifier.startsWith('Sheet_');
+                } catch (e) {
+                    return false;
+                }
+            });
         });
     },
     'render_deposition': function (editor, result, props) {
