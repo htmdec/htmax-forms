@@ -314,7 +314,7 @@
     },
     "existingSheetIGSN": {
       "title": "Sheet IGSN",
-      "description": "Search for an existing sheet IGSN",
+      "description": "Search for an existing sheet IGSN. Only IGSNs with a local identifier following the Sheet_ naming convention will appear.",
       "type": "string",
       "format": "autocomplete",
       "propertyOrder": -1,
