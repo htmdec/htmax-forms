@@ -302,12 +302,15 @@
     }
   },
   "properties": {
-    "useExistingIGSN": {
-      "title": "Use Existing Sheet IGSN",
-      "type": "boolean",
-      "format": "checkbox",
-      "default": false,
-      "propertyOrder": -2
+    "sheetIGSNMode": {
+      "title": "Sheet IGSN",
+      "type": "string",
+      "enum": ["create", "existing"],
+      "default": "create",
+      "propertyOrder": -2,
+      "options": {
+        "enum_titles": ["Create new IGSN", "Use existing IGSN"]
+      }
     },
     "existingSheetIGSN": {
       "title": "Sheet IGSN",
@@ -324,7 +327,7 @@
           "debounceTime": 500
         },
         "dependencies": {
-          "useExistingIGSN": true
+          "sheetIGSNMode": "existing"
         }
       }
     },
@@ -347,7 +350,7 @@
       "options": {
         "hidden": false,
         "dependencies": {
-          "useExistingIGSN": false
+          "sheetIGSNMode": "create"
         }
       }
     },
@@ -373,7 +376,7 @@
       "propertyOrder": 1,
       "options": {
         "dependencies": {
-          "useExistingIGSN": false
+          "sheetIGSNMode": "create"
         }
       }
     },
@@ -383,7 +386,7 @@
       "propertyOrder": 2,
       "options": {
         "dependencies": {
-          "useExistingIGSN": false
+          "sheetIGSNMode": "create"
         }
       }
     },
@@ -395,7 +398,7 @@
       "propertyOrder": 3,
       "options": {
         "dependencies": {
-          "useExistingIGSN": false
+          "sheetIGSNMode": "create"
         }
       }
     },
@@ -405,7 +408,7 @@
       "propertyOrder": 4,
       "options": {
         "dependencies": {
-          "useExistingIGSN": false
+          "sheetIGSNMode": "create"
         }
       }
     },
@@ -415,7 +418,7 @@
       "propertyOrder": 5,
       "options": {
         "dependencies": {
-          "useExistingIGSN": false
+          "sheetIGSNMode": "create"
         }
       }
     },
@@ -425,7 +428,7 @@
       "propertyOrder": 6,
       "options": {
         "dependencies": {
-          "useExistingIGSN": false
+          "sheetIGSNMode": "create"
         }
       }
     },
@@ -435,7 +438,7 @@
       "propertyOrder": 7,
       "options": {
         "dependencies": {
-          "useExistingIGSN": false
+          "sheetIGSNMode": "create"
         }
       }
     },
@@ -446,7 +449,7 @@
       "propertyOrder": 8,
       "options": {
         "dependencies": {
-          "useExistingIGSN": false
+          "sheetIGSNMode": "create"
         }
       }
     },
@@ -456,7 +459,7 @@
       "propertyOrder": 9,
       "options": {
         "dependencies": {
-          "useExistingIGSN": false
+          "sheetIGSNMode": "create"
         }
       }
     },
@@ -490,7 +493,7 @@
       "propertyOrder": 10,
       "options": {
         "dependencies": {
-          "useExistingIGSN": false
+          "sheetIGSNMode": "create"
         }
       }
     },
@@ -501,7 +504,7 @@
       "propertyOrder": 11,
       "options": {
         "dependencies": {
-          "useExistingIGSN": false
+          "sheetIGSNMode": "create"
         }
       }
     },
@@ -512,7 +515,7 @@
       "propertyOrder": 12,
       "options": {
         "dependencies": {
-          "useExistingIGSN": false
+          "sheetIGSNMode": "create"
         }
       }
     },
