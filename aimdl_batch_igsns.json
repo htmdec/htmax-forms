@@ -302,6 +302,32 @@
     }
   },
   "properties": {
+    "useExistingIGSN": {
+      "title": "Use Existing Sheet IGSN",
+      "type": "boolean",
+      "format": "checkbox",
+      "default": false,
+      "propertyOrder": -2
+    },
+    "existingSheetIGSN": {
+      "title": "Sheet IGSN",
+      "description": "Search for an existing sheet IGSN",
+      "type": "string",
+      "format": "autocomplete",
+      "propertyOrder": -1,
+      "options": {
+        "autocomplete": {
+          "search": "search_deposition",
+          "renderResult": "render_deposition",
+          "getResultValue": "get_deposition_value",
+          "autoSelect": true,
+          "debounceTime": 500
+        },
+        "dependencies": {
+          "useExistingIGSN": true
+        }
+      }
+    },
     "assignedIGSN": {
       "type": "string",
       "propertyOrder": 0,
@@ -319,7 +345,10 @@
       "$ref": "#/definitions/igsnMetadata",
       "propertyOrder": 0,
       "options": {
-        "hidden": false
+        "hidden": false,
+        "dependencies": {
+          "useExistingIGSN": false
+        }
       }
     },
     "igsn": {
@@ -341,50 +370,95 @@
         "uniqueNum": "root.uniqueNumber"
       },
       "readOnly": true,
-      "propertyOrder": 1
+      "propertyOrder": 1,
+      "options": {
+        "dependencies": {
+          "useExistingIGSN": false
+        }
+      }
     },
     "projectIdentifier": {
       "title": "Project Identifier",
       "type": "string",
-      "propertyOrder": 2
+      "propertyOrder": 2,
+      "options": {
+        "dependencies": {
+          "useExistingIGSN": false
+        }
+      }
     },
     "date": {
       "title": "Date",
       "type": "string",
       "format": "date",
       "description": "Date in YYYY-MM-DD format",
-      "propertyOrder": 3
+      "propertyOrder": 3,
+      "options": {
+        "dependencies": {
+          "useExistingIGSN": false
+        }
+      }
     },
     "alloy": {
       "title": "Alloy",
       "type": "string",
-      "propertyOrder": 4
+      "propertyOrder": 4,
+      "options": {
+        "dependencies": {
+          "useExistingIGSN": false
+        }
+      }
     },
     "uniqueNumber": {
       "title": "Unique Number",
       "type": "string",
-      "propertyOrder": 5
+      "propertyOrder": 5,
+      "options": {
+        "dependencies": {
+          "useExistingIGSN": false
+        }
+      }
     },
     "manufacturer": {
       "title": "Manufacturer",
       "type": "string",
-      "propertyOrder": 6
+      "propertyOrder": 6,
+      "options": {
+        "dependencies": {
+          "useExistingIGSN": false
+        }
+      }
     },
     "supplyCompany": {
       "title": "Supply Company",
       "type": "string",
-      "propertyOrder": 7
+      "propertyOrder": 7,
+      "options": {
+        "dependencies": {
+          "useExistingIGSN": false
+        }
+      }
     },
     "description": {
       "title": "Description",
       "type": "string",
       "format": "textarea",
-      "propertyOrder": 8
+      "propertyOrder": 8,
+      "options": {
+        "dependencies": {
+          "useExistingIGSN": false
+        }
+      }
     },
     "orcidID": {
       "title": "ORCID ID",
       "type": "string",
-      "propertyOrder": 9
+      "propertyOrder": 9,
+      "options": {
+        "dependencies": {
+          "useExistingIGSN": false
+        }
+      }
     },
     "dimensions": {
       "title": "Sheet Dimensions (mm)",
@@ -413,19 +487,34 @@
           "options": { "grid_columns": 4 }
         }
       },
-      "propertyOrder": 10
+      "propertyOrder": 10,
+      "options": {
+        "dependencies": {
+          "useExistingIGSN": false
+        }
+      }
     },
     "machiningParameters": {
       "title": "Machining Parameters",
       "description": "Upload machining parameter file (e.g. EDM Wire or other technique)",
       "$ref": "#/definitions/fileUpload",
-      "propertyOrder": 11
+      "propertyOrder": 11,
+      "options": {
+        "dependencies": {
+          "useExistingIGSN": false
+        }
+      }
     },
     "specSheet": {
       "title": "Spec Sheet",
       "description": "Upload the material spec sheet (PDF)",
       "$ref": "#/definitions/fileUpload",
-      "propertyOrder": 12
+      "propertyOrder": 12,
+      "options": {
+        "dependencies": {
+          "useExistingIGSN": false
+        }
+      }
     },
     "createSampleIGSNs": {
       "title": "Create Sample IGSNs",
