@@ -593,25 +593,31 @@
       }
     }
   },
-  "required": [
-    "projectIdentifier",
-    "date",
-    "alloy",
-    "uniqueNumber"
-  ],
-  "if": {
-    "properties": {
-      "igsn": {
+  "allOf": [
+    {
+      "if": {
+        "properties": { "sheetIGSNMode": { "const": "create" } }
+      },
+      "then": {
+        "required": ["projectIdentifier", "date", "alloy", "uniqueNumber"]
+      }
+    },
+    {
+      "if": {
         "properties": {
-          "request": { "const": false }
+          "igsn": {
+            "properties": {
+              "request": { "const": false }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "igsnMeta": { "options": { "hidden": true }, "readonly": true },
+          "assignedIGSN": { "options": { "hidden": false }, "readonly": true }
         }
       }
     }
-  },
-  "then": {
-    "properties": {
-      "igsnMeta": { "options": { "hidden": true }, "readonly": true },
-      "assignedIGSN": { "options": { "hidden": false }, "readonly": true }
-    }
-  }
+  ]
 }
