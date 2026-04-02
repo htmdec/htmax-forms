@@ -526,19 +526,30 @@
         }
       }
     },
+    "photo": {
+      "title": "Photo",
+      "description": "Upload a photo of the sheet.",
+      "$ref": "#/definitions/fileUpload",
+      "propertyOrder": 13,
+      "options": {
+        "dependencies": {
+          "sheetIGSNMode": "create"
+        }
+      }
+    },
     "createSampleIGSNs": {
       "title": "Create Sample IGSNs",
       "description": "Check to mint IGSNs for the cut samples from this sheet.",
       "type": "boolean",
       "format": "checkbox",
       "default": true,
-      "propertyOrder": 13
+      "propertyOrder": 14
     },
     "sampleCount": {
       "title": "Number of Samples",
       "description": "How many samples to cut from this sheet. One IGSN will be minted per sample (suffixed -1, -2, ...).",
       "type": "integer",
-      "propertyOrder": 14,
+      "propertyOrder": 15,
       "options": {
         "dependencies": {
           "createSampleIGSNs": true
@@ -550,7 +561,7 @@
       "description": "Description applied uniformly to all cut samples from this sheet.",
       "type": "string",
       "format": "textarea",
-      "propertyOrder": 15,
+      "propertyOrder": 16,
       "options": {
         "dependencies": {
           "createSampleIGSNs": true
@@ -585,7 +596,7 @@
           "options": { "grid_columns": 4 }
         }
       },
-      "propertyOrder": 16,
+      "propertyOrder": 17,
       "options": {
         "dependencies": {
           "createSampleIGSNs": true
