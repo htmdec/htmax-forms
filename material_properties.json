@@ -1,0 +1,87 @@
+{
+  "title": "Material Properties",
+  "description": "Material properties indexed by IGSN with version tracking",
+  "type": "object",
+  "properties": {
+    "Sample_ID": {
+          "type": "string",
+          "title": "Sample_ID",
+          "description": "Lookup for the IGSN of the sample",
+          "format": "autocomplete",
+          "options": {
+            "autocomplete": {
+              "search": "search_deposition",
+              "renderResult": "render_deposition",
+              "getResultValue": "get_deposition_value",
+              "autoSelect": true,
+              "debounceTime": 500
+            }
+          }
+      },
+    "version": {
+      "type": "integer",
+      "title": "Version",
+      "description": "Auto-calculated version based on existing entries for this IGSN",
+      "readonly": true,
+      "template": "{{nextVersionForIGSN Sample_ID}}"
+    },
+    "density": {
+      "type": "object",
+      "title": "Density",
+      "properties": {
+        "value": {
+          "type": "number",
+          "title": "Value"
+        },
+        "unit": {
+          "type": "string",
+          "title": "Unit",
+          "default": "kg/m³"
+        }
+      },
+      "required": ["value"]
+    },
+    "bulkWaveSpeed": {
+      "type": "object",
+      "title": "Bulk Wave Speed (C0)",
+      "properties": {
+        "value": {
+          "type": "number",
+          "title": "Value"
+        },
+        "unit": {
+          "type": "string",
+          "title": "Unit",
+          "default": "m/s"
+        }
+      },
+      "required": ["value"]
+    },
+    "longitudinalWaveSpeed": {
+      "type": "object",
+      "title": "Longitudinal Wave Speed (C_L)",
+      "properties": {
+        "value": {
+          "type": "number",
+          "title": "Value"
+        },
+        "unit": {
+          "type": "string",
+          "title": "Unit",
+          "default": "m/s"
+        }
+      },
+      "required": ["value"]
+    },
+    "source": {
+      "type": "string",
+      "title": "Source",
+      "description": "Citation, reference, or source of this data"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes"
+    }
+  },
+  "required": ["igsn", "version", "source"]
+}
