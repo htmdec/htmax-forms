@@ -36,52 +36,19 @@
       }
     },
     "density": {
-      "type": "object",
+      "type": "number",
       "title": "Density",
-      "properties": {
-        "value": {
-          "type": "number",
-          "title": "Value"
-        },
-        "unit": {
-          "type": "string",
-          "title": "Unit",
-          "default": "kg/m³"
-        }
-      },
-      "required": ["value"]
+      "description": "in kg/m³"
     },
     "bulkWaveSpeed": {
-      "type": "object",
+      "type": "number",
       "title": "Bulk Wave Speed (C0)",
-      "properties": {
-        "value": {
-          "type": "number",
-          "title": "Value"
-        },
-        "unit": {
-          "type": "string",
-          "title": "Unit",
-          "default": "m/s"
-        }
-      },
-      "required": ["value"]
+      "description": "in m/s"
     },
     "longitudinalWaveSpeed": {
-      "type": "object",
+      "type": "number",
       "title": "Longitudinal Wave Speed (C_L)",
-      "properties": {
-        "value": {
-          "type": "number",
-          "title": "Value"
-        },
-        "unit": {
-          "type": "string",
-          "title": "Unit",
-          "default": "m/s"
-        }
-      },
-      "required": ["value"]
+      "description": "in m/s"
     },
     "source": {
       "type": "string",
