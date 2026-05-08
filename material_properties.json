@@ -60,5 +60,5 @@
       "title": "Notes"
     }
   },
-  "required": ["igsn", "version", "source"]
+  "required": ["Sample_ID", "version", "source"]
 }
