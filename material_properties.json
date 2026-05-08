@@ -18,23 +18,6 @@
             }
           }
       },
-    "version": {
-      "type": "integer",
-      "title": "Version",
-      "description": "Version number for this IGSN's properties",
-      "minimum": 1,
-      "default": 1
-    },
-    "igsn_version": {
-      "type": "string",
-      "title": "IGSN Version",
-      "description": "Unique identifier combining IGSN and version",
-      "readonly": true,
-      "template": "{{igsn_version}}",
-      "options": {
-        "hidden": true
-      }
-    },
     "density": {
       "type": "number",
       "title": "Density",
@@ -60,5 +43,5 @@
       "title": "Notes"
     }
   },
-  "required": ["Sample_ID", "version", "source"]
+  "required": ["Sample_ID", "source"]
 }
