@@ -25,6 +25,16 @@
       "readonly": true,
       "template": "{{nextVersionForIGSN Sample_ID}}"
     },
+    "igsn_version": {
+      "type": "string",
+      "title": "IGSN Version",
+      "description": "Unique identifier combining IGSN and version",
+      "readonly": true,
+      "template": "{{Sample_ID}}_v{{version}}",
+      "options": {
+        "hidden": true
+      }
+    },
     "density": {
       "type": "object",
       "title": "Density",
