@@ -21,9 +21,9 @@
     "version": {
       "type": "integer",
       "title": "Version",
-      "description": "Auto-calculated version based on existing entries for this IGSN",
-      "readonly": true,
-      "template": "{{nextVersionForIGSN Sample_ID}}"
+      "description": "Version number for this IGSN's properties",
+      "minimum": 1,
+      "default": 1
     },
     "igsn_version": {
       "type": "string",
