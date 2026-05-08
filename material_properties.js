@@ -29,13 +29,6 @@ window.JSONEditor.defaults.callbacks.autocomplete = {
         }
     },
     'get_deposition_value': function (editor, result) {
-        try {
-            const localId = result.metadata.alternateIdentifiers.find(
-                (id) => id.alternateIdentifierType.toLowerCase() === 'local'
-            );
-            return `${result.igsn} - ${result._id} - ${localId.alternateIdentifier}`;
-        } catch (e) {
-            return `${result.igsn} - ${result._id} - no localId`;
-        }
+        return result.igsn;
     }
 };
