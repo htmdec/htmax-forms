@@ -33,6 +33,8 @@ window.JSONEditor.defaults.callbacks.autocomplete = {
     }
 };
 
-Handlebars.registerHelper('igsn_version', function(sample_id, version) {
+Handlebars.registerHelper('igsn_version', function() {
+    const sample_id = this.Sample_ID || '';
+    const version = this.version || '';
     return `${sample_id}_v${version}`;
 });

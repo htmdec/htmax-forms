@@ -30,7 +30,7 @@
       "title": "IGSN Version",
       "description": "Unique identifier combining IGSN and version",
       "readonly": true,
-      "template": "{{igsn_version Sample_ID version}}",
+      "template": "{{igsn_version}}",
       "options": {
         "hidden": true
       }
