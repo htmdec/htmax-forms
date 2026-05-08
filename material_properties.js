@@ -32,3 +32,7 @@ window.JSONEditor.defaults.callbacks.autocomplete = {
         return result.igsn;
     }
 };
+
+Handlebars.registerHelper('igsn_version', function(sample_id, version) {
+    return `${sample_id}_v${version}`;
+});
