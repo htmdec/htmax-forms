@@ -103,5 +103,5 @@
       "propertyOrder": 6
     }
   },
-  "required": ["Sample_ID"]
+  "required": ["Sample_ID", "density", "bulkWaveSpeed", "longitudinalWaveSpeed"]
 }
