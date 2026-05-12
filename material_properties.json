@@ -31,7 +31,20 @@
     "density": {
       "type": "array",
       "items": {
-        "type": "number"
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number",
+            "title": "Value",
+            "description": "in kg/m³"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "description": "Citation, reference, or source of this value"
+          }
+        },
+        "required": ["value"]
       },
       "title": "Density",
       "description": "in kg/m³"
@@ -39,7 +52,20 @@
     "bulkWaveSpeed": {
       "type": "array",
       "items": {
-        "type": "number"
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number",
+            "title": "Value",
+            "description": "in m/s"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "description": "Citation, reference, or source of this value"
+          }
+        },
+        "required": ["value"]
       },
       "title": "Bulk Wave Speed (C0)",
       "description": "in m/s"
@@ -47,7 +73,20 @@
     "longitudinalWaveSpeed": {
       "type": "array",
       "items": {
-        "type": "number"
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number",
+            "title": "Value",
+            "description": "in m/s"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "description": "Citation, reference, or source of this value"
+          }
+        },
+        "required": ["value"]
       },
       "title": "Longitudinal Wave Speed (C_L)",
       "description": "in m/s"
