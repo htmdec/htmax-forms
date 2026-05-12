@@ -52,15 +52,10 @@
       "title": "Longitudinal Wave Speed (C_L)",
       "description": "in m/s"
     },
-    "source": {
-      "type": "string",
-      "title": "Source",
-      "description": "Citation, reference, or source of this data"
-    },
     "notes": {
       "type": "string",
       "title": "Notes"
     }
   },
-  "required": ["Sample_ID", "source"]
+  "required": ["Sample_ID"]
 }
