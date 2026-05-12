@@ -48,7 +48,7 @@
             "description": "Citation, reference, or source of this value"
           }
         },
-        "required": ["value"]
+        "required": ["value", "source"]
       },
       "title": "Density",
       "description": "in kg/m³",
@@ -71,7 +71,7 @@
             "description": "Citation, reference, or source of this value"
           }
         },
-        "required": ["value"]
+        "required": ["value", "source"]
       },
       "title": "Bulk Wave Speed (C0)",
       "description": "in m/s",
@@ -94,7 +94,7 @@
             "description": "Citation, reference, or source of this value"
           }
         },
-        "required": ["value"]
+        "required": ["value", "source"]
       },
       "title": "Longitudinal Wave Speed (C_L)",
       "description": "in m/s",
