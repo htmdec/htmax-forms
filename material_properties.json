@@ -40,7 +40,8 @@
           "value": {
             "type": "number",
             "title": "Value",
-            "description": "in kg/m³"
+            "description": "in kg/m³",
+            "minimum": 1
           },
           "source": {
             "type": "string",
@@ -63,7 +64,8 @@
           "value": {
             "type": "number",
             "title": "Value",
-            "description": "in m/s"
+            "description": "in m/s",
+            "minimum": 1
           },
           "source": {
             "type": "string",
@@ -86,7 +88,8 @@
           "value": {
             "type": "number",
             "title": "Value",
-            "description": "in m/s"
+            "description": "in m/s",
+            "minimum": 1
           },
           "source": {
             "type": "string",
