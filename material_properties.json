@@ -18,6 +18,16 @@
             }
           }
       },
+    "materialType": {
+      "type": "string",
+      "title": "Material Type",
+      "description": "Type or classification of the material"
+    },
+    "materialThickness": {
+      "type": "number",
+      "title": "Material Thickness",
+      "description": "in mm"
+    },
     "density": {
       "type": "array",
       "items": {
@@ -41,16 +51,6 @@
       },
       "title": "Longitudinal Wave Speed (C_L)",
       "description": "in m/s"
-    },
-    "materialType": {
-      "type": "string",
-      "title": "Material Type",
-      "description": "Type or classification of the material"
-    },
-    "materialThickness": {
-      "type": "number",
-      "title": "Material Thickness",
-      "description": "in mm"
     },
     "source": {
       "type": "string",
