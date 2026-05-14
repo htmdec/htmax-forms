@@ -3,9 +3,9 @@
   "description": "Material properties indexed by IGSN with version tracking",
   "type": "object",
   "properties": {
-    "Sample_ID": {
+    "IGSN": {
           "type": "string",
-          "title": "Sample_ID",
+          "title": "IGSN",
           "description": "Lookup for the IGSN of the sample",
           "format": "autocomplete",
           "options": {
@@ -109,5 +109,5 @@
       "propertyOrder": 6
     }
   },
-  "required": ["Sample_ID", "density", "bulkWaveSpeed", "longitudinalWaveSpeed"]
+  "required": ["IGSN", "density", "bulkWaveSpeed", "longitudinalWaveSpeed"]
 }
