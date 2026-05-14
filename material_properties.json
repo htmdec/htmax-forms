@@ -46,12 +46,14 @@
                 "type": "number",
                 "title": "Value",
                 "description": "in kg/m³",
-                "minimum": 1
+                "minimum": 1,
+                "propertyOrder": 0
               },
               "source": {
                 "type": "string",
                 "title": "Source",
-                "description": "Citation, reference, or source of this value"
+                "description": "Citation, reference, or source of this value",
+                "propertyOrder": 1
               }
             },
             "required": ["value", "source"]
@@ -65,12 +67,14 @@
                 "type": "number",
                 "title": "Value",
                 "description": "in m/s",
-                "minimum": 1
+                "minimum": 1,
+                "propertyOrder": 0
               },
               "source": {
                 "type": "string",
                 "title": "Source",
-                "description": "Citation, reference, or source of this value"
+                "description": "Citation, reference, or source of this value",
+                "propertyOrder": 1
               }
             },
             "required": ["value", "source"]
@@ -84,12 +88,14 @@
                 "type": "number",
                 "title": "Value",
                 "description": "in m/s",
-                "minimum": 1
+                "minimum": 1,
+                "propertyOrder": 0
               },
               "source": {
                 "type": "string",
                 "title": "Source",
-                "description": "Citation, reference, or source of this value"
+                "description": "Citation, reference, or source of this value",
+                "propertyOrder": 1
               }
             },
             "required": ["value", "source"]
