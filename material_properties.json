@@ -42,6 +42,7 @@
             "title": "Density",
             "description": "in kg/m³",
             "minimum": 1,
+            "default": null,
             "propertyOrder": 0
           },
           "c0": {
@@ -49,6 +50,7 @@
             "title": "Bulk Wave Speed (C0)",
             "description": "in m/s",
             "minimum": 1,
+            "default": null,
             "propertyOrder": 1
           },
           "c_l": {
@@ -56,6 +58,7 @@
             "title": "Longitudinal Wave Speed (C_L)",
             "description": "in m/s",
             "minimum": 1,
+            "default": null,
             "propertyOrder": 2
           },
           "source": {
