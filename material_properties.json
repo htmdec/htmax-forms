@@ -38,72 +38,37 @@
         "type": "object",
         "properties": {
           "density": {
-            "type": "object",
+            "type": "number",
             "title": "Density",
             "description": "in kg/m³",
-            "properties": {
-              "value": {
-                "type": "number",
-                "title": "Value",
-                "description": "in kg/m³",
-                "minimum": 1,
-                "propertyOrder": 0
-              },
-              "source": {
-                "type": "string",
-                "title": "Source",
-                "description": "Citation, reference, or source of this value",
-                "propertyOrder": 1
-              }
-            },
-            "required": ["value", "source"]
+            "minimum": 1,
+            "propertyOrder": 0
           },
           "c0": {
-            "type": "object",
+            "type": "number",
             "title": "Bulk Wave Speed (C0)",
             "description": "in m/s",
-            "properties": {
-              "value": {
-                "type": "number",
-                "title": "Value",
-                "description": "in m/s",
-                "minimum": 1,
-                "propertyOrder": 0
-              },
-              "source": {
-                "type": "string",
-                "title": "Source",
-                "description": "Citation, reference, or source of this value",
-                "propertyOrder": 1
-              }
-            },
-            "required": ["value", "source"]
+            "minimum": 1,
+            "propertyOrder": 1
           },
           "c_l": {
-            "type": "object",
+            "type": "number",
             "title": "Longitudinal Wave Speed (C_L)",
             "description": "in m/s",
-            "properties": {
-              "value": {
-                "type": "number",
-                "title": "Value",
-                "description": "in m/s",
-                "minimum": 1,
-                "propertyOrder": 0
-              },
-              "source": {
-                "type": "string",
-                "title": "Source",
-                "description": "Citation, reference, or source of this value",
-                "propertyOrder": 1
-              }
-            },
-            "required": ["value", "source"]
+            "minimum": 1,
+            "propertyOrder": 2
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "description": "Citation, reference, or source of this measurement set",
+            "propertyOrder": 3
           }
-        }
+        },
+        "required": ["source"]
       },
       "title": "Measurements",
-      "description": "Array of measurement sets containing density, bulk wave speed, and longitudinal wave speed",
+      "description": "Array of measurement sets (flat 2D table format). Each row contains density, c0, and c_l values with a single source attribution.",
       "propertyOrder": 3
     },
     "notes": {
