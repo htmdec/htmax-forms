@@ -1,0 +1,86 @@
+{
+  "title": "Material Properties",
+  "description": "Material properties indexed by IGSN with version tracking",
+  "type": "object",
+  "properties": {
+    "IGSN": {
+          "type": "string",
+          "title": "IGSN",
+          "description": "Lookup for the IGSN of the sample",
+          "minLength": 1,
+          "default": null,
+          "format": "autocomplete",
+          "options": {
+            "autocomplete": {
+              "search": "search_deposition",
+              "renderResult": "render_deposition",
+              "getResultValue": "get_deposition_value",
+              "autoSelect": true,
+              "debounceTime": 500
+            }
+          },
+          "propertyOrder": 0
+      },
+    "materialType": {
+      "type": "string",
+      "title": "Material Type",
+      "description": "Type or classification of the material",
+      "propertyOrder": 1
+    },
+    "materialThickness": {
+      "type": "number",
+      "title": "Material Thickness",
+      "description": "in mm",
+      "propertyOrder": 2
+    },
+    "measurements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "density": {
+            "type": ["number", "null"],
+            "title": "Density",
+            "description": "in kg/m³",
+            "minimum": 1,
+            "default": null,
+            "propertyOrder": 0
+          },
+          "c0": {
+            "type": ["number", "null"],
+            "title": "Bulk Wave Speed (C0)",
+            "description": "in m/s",
+            "minimum": 1,
+            "default": null,
+            "propertyOrder": 1
+          },
+          "c_l": {
+            "type": ["number", "null"],
+            "title": "Longitudinal Wave Speed (C_L)",
+            "description": "in m/s",
+            "minimum": 1,
+            "default": null,
+            "propertyOrder": 2
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "description": "Citation, reference, or source of this measurement set",
+            "propertyOrder": 3
+          }
+        },
+        "required": ["source"]
+      },
+      "title": "Measurements",
+      "description": "Array of measurement sets (flat 2D table format). Each row contains density, c0, and c_l values with a single source attribution.",
+      "propertyOrder": 3
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes",
+      "propertyOrder": 4
+    }
+  },
+  "required": ["IGSN", "measurements"]
+}
