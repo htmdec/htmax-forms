@@ -7,6 +7,8 @@
           "type": "string",
           "title": "IGSN",
           "description": "Lookup for the IGSN of the sample",
+          "minLength": 1,
+          "default": null,
           "format": "autocomplete",
           "options": {
             "autocomplete": {
