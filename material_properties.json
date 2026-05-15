@@ -38,7 +38,7 @@
         "type": "object",
         "properties": {
           "density": {
-            "type": "number",
+            "type": ["number", "null"],
             "title": "Density",
             "description": "in kg/m³",
             "minimum": 1,
@@ -46,7 +46,7 @@
             "propertyOrder": 0
           },
           "c0": {
-            "type": "number",
+            "type": ["number", "null"],
             "title": "Bulk Wave Speed (C0)",
             "description": "in m/s",
             "minimum": 1,
@@ -54,7 +54,7 @@
             "propertyOrder": 1
           },
           "c_l": {
-            "type": "number",
+            "type": ["number", "null"],
             "title": "Longitudinal Wave Speed (C_L)",
             "description": "in m/s",
             "minimum": 1,
