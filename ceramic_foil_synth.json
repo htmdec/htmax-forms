@@ -63,6 +63,7 @@
         "temperature": {
           "type": "number",
           "title": "Reaction Temperature (degC)",
+          "minimum": -273,
           "options": {
             "grid_columns": 6
           },
@@ -71,6 +72,7 @@
         "time": {
           "type": "number",
           "title": "Reaction Time (min)",
+          "minimum": 0,
           "options": {
             "grid_columns": 6,
             "grid_break": true
@@ -88,6 +90,7 @@
         "width": {
           "type": "number",
           "title": "Width (mm)",
+          "minimum": 0,
           "options": {
             "grid_columns": 6
           },
@@ -96,6 +99,7 @@
         "length": {
           "type": "number",
           "title": "Length (mm)",
+          "minimum": 0,
           "options": {
             "grid_columns": 6,
             "grid_break": true
@@ -108,5 +112,12 @@
   },
   "title": "Ceramic Foil Synthesis (HT-MAX)",
   "description": "Form to track ceramic foil samples for HT-MAX using defined naming conventions and metadata protocols",
-  "type": "object"
+  "type": "object",
+  "required": [
+    "assignedIGSN",
+    "process",
+    "fabricationDate",
+    "conditions",
+    "dimensions"
+  ]
 }
