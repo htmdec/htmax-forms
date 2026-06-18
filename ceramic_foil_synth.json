@@ -10,7 +10,7 @@
     }
   },
   "properties": {
-    "igsn": {
+    "assignedIGSN": {
       "type": "string",
       "title": "IGSN",
       "description": "Lookup for the IGSN of the sample",
