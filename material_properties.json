@@ -28,9 +28,10 @@
       "propertyOrder": 1
     },
     "materialThickness": {
-      "type": "number",
+      "type": ["number", "null"],
       "title": "Material Thickness",
       "description": "in mm",
+      "default": null,
       "propertyOrder": 2
     },
     "measurements": {
