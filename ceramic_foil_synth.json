@@ -64,7 +64,7 @@
           "type": "number",
           "title": "Reaction Temperature (degC)",
           "options": {
-            "grid_columns": 3
+            "grid_columns": 6
           },
           "propertyOrder": 2
         },
@@ -72,7 +72,7 @@
           "type": "number",
           "title": "Reaction Time (min)",
           "options": {
-            "grid_columns": 3,
+            "grid_columns": 6,
             "grid_break": true
           },
           "propertyOrder": 3
@@ -89,7 +89,7 @@
           "type": "number",
           "title": "Width (mm)",
           "options": {
-            "grid_columns": 3
+            "grid_columns": 6
           },
           "propertyOrder": 1
         },
