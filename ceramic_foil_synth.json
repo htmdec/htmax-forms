@@ -1,0 +1,112 @@
+{
+  "definitions": {
+    "date": {
+      "$id": "#/definitions/date",
+      "type": "string",
+      "format": "date",
+      "options": {
+        "flatpickr": {}
+      }
+    }
+  },
+  "properties": {
+    "igsn": {
+      "type": "string",
+      "title": "IGSN",
+      "description": "Lookup for the IGSN of the sample",
+      "minLength": 1,
+      "default": null,
+      "format": "autocomplete",
+      "options": {
+        "autocomplete": {
+          "search": "search_deposition",
+          "renderResult": "render_deposition",
+          "getResultValue": "get_deposition_value",
+          "autoSelect": true,
+          "debounceTime": 500
+        }
+      },
+      "propertyOrder": 0
+    },
+    "process": {
+      "propertyOrder": 1,
+      "title": "Synthesis Process",
+      "type": "string",
+      "enum": [
+        "CH4",
+        "CH4H2Ar_Clamp",
+        "CH4H2Ar_Crucible",
+        "NH3"
+      ],
+      "options": {
+        "enum_titles": [
+          "Gas carburization in 10% CH4/Bal Ar",
+          "Gas carburization in 10% CH4/Bal Ar + 5% H2/Bal Ar with continuous vacuum pull (graphite clamp)",
+          "Gas carburization in 10% CH4/Bal Ar + 5% H2/Bal Ar with continuous vacuum pull (graphite crucible)",
+          "Gas nitridation in 10% NH3/Bal Ar"
+        ]
+      }
+    },
+    "fabricationDate": {
+      "title": "Date Of Fabrication",
+      "$ref": "#/definitions/date",
+      "propertyOrder": 3
+    },
+    "conditions": {
+      "type": "object",
+      "title": "Processing Conditions",
+      "format": "grid-strict",
+      "options": {
+        "grid_columns": 12
+      },
+      "properties": {
+        "temperature": {
+          "type": "number",
+          "title": "Reaction Temperature (degC)",
+          "options": {
+            "grid_columns": 3
+          },
+          "propertyOrder": 2
+        },
+        "time": {
+          "type": "number",
+          "title": "Reaction Time (min)",
+          "options": {
+            "grid_columns": 3,
+            "grid_break": true
+          },
+          "propertyOrder": 3
+        }
+      },
+      "propertyOrder": 4
+    },
+    "dimensions": {
+      "type": "object",
+      "title": "Sample Dimensions",
+      "format": "grid-strict",
+      "properties": {
+        "width": {
+          "type": "number",
+          "title": "Width (mm)",
+          "options": {
+            "grid_columns": 3
+          },
+          "propertyOrder": 1
+        },
+        "length": {
+          "type": "number",
+          "title": "Length (mm)",
+          "options": {
+            "grid_columns": 6,
+            "grid_break": true
+          },
+          "propertyOrder": 2
+        }
+      },
+      "propertyOrder": 5
+    }
+  },
+  "title": "Ceramic Foil Synthesis (HT-MAX)",
+  "description": "Form to track ceramic foil samples for HT-MAX using defined naming conventions and metadata protocols",
+  "type": "object"
+}
